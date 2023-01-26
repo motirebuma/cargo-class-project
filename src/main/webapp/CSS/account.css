@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+body
+{
+    min-height: 100vh;
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+body .profile
+{
+    height: 550px;
+    width: 500px;
+    border: solid;
+}
+body .profile .head
+{
+    height: 60px;
+    width: 100%;
+    border: solid;
+    border-radius: 0 0 10px 10px;
+}
+/* 
+.footer
+{
+    display: flex;
+    justify-content: center;
+    background-color: #1c1c1c;
+    opacity: 0.7;
+    color: lightgrey;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    border-top: solid 2px #47B5FF;
+    justify-content: space-between;
+}
+.footer .details
+{
+    min-width: 10%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 8%  0 8%;
+    gap: 2px;
+}
+.subdetails
+{
+    display: flex;
+    gap: 10px;
+}
+.footer .details h2
+{
+    color: #47B5FF;
+}
+.footer .details ul{
+    text-align: left;
+}
+.footer .details ul a
+{
+    text-decoration: none;
+    color: #EEEEEE;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+}
+.footer .details i
+{
+    text-align: left;
+    color: #47B5FF;
+    font-size: 20px;
+}
+.footer .details h4
+{
+    color: #EEEEEE;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+} */
