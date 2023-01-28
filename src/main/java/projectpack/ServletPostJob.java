@@ -44,7 +44,6 @@ public class ServletPostJob extends HttpServlet {
 
 			String sql_command = "insert into jobList (title, jobType, truckType, description, price) values (?, ?, ?, ?, ?)";
 			
-			int result = 0;
 			Class.forName(Driver);
 			Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
 
@@ -58,7 +57,7 @@ public class ServletPostJob extends HttpServlet {
 			myStmt.setString(5,  price);
 			
 			
-			result = myStmt.executeUpdate();
+			myStmt.executeUpdate();
 
 			myConn.close();
 		}
