@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+nav.navbar
+{
+    min-height: 90px;
+    position: fixed;
+    display: absolute;
+    background-color:#1c1c1c;
+    width: 100%;
+    z-index: 999;
+    border-bottom: solid #47B5FF;
+    top: 0;
+    opacity: 0.8;
+}
+nav.navbar:hover
+{
+    opacity: 1;
+}
+nav.navbar button
+{
+    border: solid 2px teal;
+    border-color: teal;
+    /* margin-left: 20px;   */
+}
+nav.navbar .cssnav
+{
+    justify-content: right;
+    align-items: right;
+}
+nav.navbar .cssnav li{
+    list-style: none;
+    display: inline-block;
+}
+nav.navbar .cssnav li:active
+{
+    transform: scale(1.35);
+}
+nav.navbar .cssnav li a{
+    text-decoration: none;
+    display: block;
+    color: #47B5FF;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins';
+}
+nav.navbar .cssnav li a:hover
+{
+    color: #31E1F7;
+}
+body
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECECEC;
+    flex-direction: column;
+    padding: 150px;
+    gap: 30px;
+}
+body .container
+{
+    width: 550px;
+    min-height: 500px;
+    border: solid 1px grey;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 0 25px 0 25px;
+    overflow: hidden;
+
+}
+body .container .head
+{
+    /* border: solid 1px black; */
+    height: 80px;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1c1c1c;
+    color: #fff;
+    /* background-color: #39B5E0; */
+}
+body .container .head i
+{
+    font-size: 28px;
+    padding-right: 6px;
+}
+body .container .head h1
+{
+    font-weight: 500;
+}
+body .container .info
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+body .container .info button
+{
+    height: 30px;
+    width: 120px;
+    position: relative;
+    left: 350px;
+    top: 25px;
+    background-color: #47B5FF;
+    color: #fff;
+    border: solid 1px #1c1c1c;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px gray;
+}
+body .container .info button:hover
+{
+    background-color: transparent;
+    color: #1c1c1c;
+    transition: 0.3s;
+}
+body .container .info button:active
+{
+    transform: scale(1.12);
+}

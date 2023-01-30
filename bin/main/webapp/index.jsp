@@ -43,7 +43,7 @@
 	                <div class="head">
 	                    <h1>Customer</h1>
 	                </div>
-                	<button type="submit">Sign in</button>
+                	<button type="submit">Sign up</button>
             	</div>
     		</form>
             
@@ -52,7 +52,7 @@
                 	<div class="head">
                     	<h1>Truck owner</h1>
                 	</div>
-                	<button type="submit">Sign in</button>
+                	<button type="submit">Sign up</button>
             	</div>
     		</form>
         </div>

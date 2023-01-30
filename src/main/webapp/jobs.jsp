@@ -27,23 +27,23 @@
         <div class="cssnav collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li>
-                    <a href="#" class="nav-link">Job List</a>
+                    <a href="jobs" class="nav-link">Job List</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Post</a>
+                    <a href="postjob" class="nav-link">Post</a>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Notification</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">Account</a>
+                    <a href="myaccount" class="nav-link">Account</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <!-- jobType not added -->
-
+    <!-- reverse -->
     <% for(int i=jobsRec.size()-1; i >= 0; i--){ %>
         <% Jobs job = (Jobs)jobsRec.get(i);%>
     <div class="post">

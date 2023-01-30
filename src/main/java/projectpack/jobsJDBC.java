@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import javax.servlet.http.HttpServlet;
-
 public class jobsJDBC{
 public ArrayList<Jobs> getjobsResultSet() {
 		
@@ -21,6 +19,7 @@ public ArrayList<Jobs> getjobsResultSet() {
 		try {
 			String sql_command = "select id, title, jobType ,truckType , description, price from jobList";
 			//String sql_command ="select count(*) from jobList";
+
 
 			Class.forName(Driver);
 			

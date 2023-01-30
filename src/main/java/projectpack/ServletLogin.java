@@ -1,7 +1,6 @@
 package main.java.projectpack;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,14 +24,11 @@ public class ServletLogin extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		String em = "killo@mail.com", pass="pass123";
-		//print writer
-		PrintWriter out = response.getWriter();
-		//dispatcher
 		RequestDispatcher dispatcher = null;
 		
 		if(em.equals(email) && pass.equals(password)) {
 			//request.setAttribute("status", "success");
-			dispatcher = request.getRequestDispatcher("post.jsp");
+			dispatcher = request.getRequestDispatcher("jobs");
 		}
 		else {
 			request.setAttribute("status", "failed");
