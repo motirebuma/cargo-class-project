@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/register")
-public class Register extends HttpServlet {
+public class ServletRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,15 +29,16 @@ public class Register extends HttpServlet {
 		String town = request.getParameter("town");
 		String kebele = request.getParameter("kebele");
 		String house = request.getParameter("house");
+		//Image does not implemented...
 
+		//JDBC
         String DBuser = "root";
         String DBpass = "password123";
         String Driver = "com.mysql.cj.jdbc.Driver";
-        
         String url = "jdbc:MySQL://localhost:3306/test12";
 
 		try {
-
+																																			 //1  2  3  4  5  6  7  8  9 
 			String sql_command = "insert into users (fullname, username, password, email, idnumber, region, town, kebele, housenumber) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			Class.forName(Driver);

@@ -23,7 +23,7 @@ public class ServletLogin extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
-		String em = "killo@mail.com", pass="pass123";
+		String em = "astu@mail.com", pass="pass123";
 		RequestDispatcher dispatcher = null;
 		
 		if(em.equals(email) && pass.equals(password)) {

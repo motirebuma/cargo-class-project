@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freight Transportation</title>
-    <link rel="stylesheet" href="CSS/freight.css">
+    <link rel="stylesheet" href="CSS/index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -18,6 +18,7 @@
             <h1 class="logo">Freight-<span>Transportation</span></h1>
         </div>
         <div>
+            <a class="log" href="signin">Login</a>
             <a class="log" href="#getstarted">Signup</a>
         </div>
     </nav>
@@ -27,6 +28,9 @@
             <a href="#getstarted">Get Started</a>
         </div>
     </section>
+
+
+
     <section class="options" id="getstarted">
         <div class="container">
         	<form action="signin" method="get">
