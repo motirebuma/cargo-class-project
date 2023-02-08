@@ -56,7 +56,7 @@ public class ServletAdminLogin extends HttpServlet {
                     pass = result.getString("password");                
                 }
                 if(user.equals(username) && pass.equals(password)){
-                    dispatcher = request.getRequestDispatcher("post.jsp");
+                    dispatcher = request.getRequestDispatcher("admin_panel.html");
                 }
                 else{
                     request.setAttribute("status", "failed");

@@ -42,19 +42,19 @@
             	</div>
     		</form>
             
-			<form action="register" method="get">
+			<!-- <form action="register" method="get">
     			<div class="box box2">
 	                <div class="head">
 	                    <h1>Customer</h1>
 	                </div>
                 	<button type="submit">Sign up</button>
             	</div>
-    		</form>
+    		</form> -->
             
             <form action="register" method="get">
     			<div class="box box3">
                 	<div class="head">
-                    	<h1>Truck owner</h1>
+                    	<h1>Register</h1>
                 	</div>
                 	<button type="submit">Sign up</button>
             	</div>
@@ -78,7 +78,7 @@
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="#">Freight transportation</a></li>
-                <li><a href="#">Register</a></li>
+                <li><a href="register">Register</a></li>
             </ul>
         </div>
         <div class="contact details">

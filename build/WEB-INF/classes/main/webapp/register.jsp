@@ -38,9 +38,14 @@
             <input type="text" placeholder="Town" name="town" required>
             <input type="text" placeholder="Kebele" name="kebele" required>
             <input type="text" placeholder="house number" name="house" required>
-            <div class="file">
-                <label for="">Upload your ID</label>
-                <input type="file" name="id_file" required>
+            <select class="catagories" name="region" id="userType"required>
+                <option value="">User Type</option>
+                <option value="Customer">Customer</option>
+                <option value="Trucker">Trucker</option>
+            </select>
+            <div class="file_div">
+                <label id="id_type"></label>
+                <div id="file"></div>
             </div>
             <button type="submit">Register</button>
         </form>
@@ -57,7 +62,7 @@
             <h2>Quick Links</h2>
             <ul>
                 <li><a href="#">Freight transportation</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="signin">Login</a></li>
             </ul>
         </div>
         <div class="contact details">
@@ -74,5 +79,22 @@
 
         </div>
     </div>
+
+    <!-- javascript -->
+    <script type="text/javascript">
+
+        let usertype = document.getElementById("userType").value;
+        let fileField = document.getElementById("file")
+        let id_type = document.getElementById("id_type")
+        if(usertype == "Customer"){
+            id_type.innerHTML = "Upload your ID";
+            fileField.innerHTML = "<input id='file' type='file' name='id_file' required>";
+        }
+        if(usertype =="Trucker"){
+            id_type.innerHTML = "Upload your License";
+            fileField.innerHTML = "<input id='file' type='file' name='id_file' required>";
+            
+        }
+    </script>
 </body>
 </html>

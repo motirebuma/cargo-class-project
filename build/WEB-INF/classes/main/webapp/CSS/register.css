@@ -9,6 +9,7 @@ body
 {
     min-height: 100vh;
     background: url(../images/register.jpg) no-repeat;
+    /* backdrop-filter: blur(4px); */
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -109,7 +110,11 @@ button:active
 {
     transform: scale(0.12);
 }
-
+.file_div{
+    display: flex;
+    justify-self: start;
+    gap: 10px;
+}
 /* ----------------footer--------------- */
 
 .footer

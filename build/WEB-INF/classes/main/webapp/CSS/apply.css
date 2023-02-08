@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body .container
+{
+    height: 300px;
+    width: 450px;
+    border: 1px solid black;
+    padding: 20px;
+
+}
+body .container h1
+{
+    text-align: center;
+}
+body form{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+body form input
+{
+    width: 220px;
+    outline: none;
+}
+
+body form textarea
+{
+    resize: none;
+    height: 80px;
+    width: 220px;
+    outline: none;
+}
+body form .ftr
+{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

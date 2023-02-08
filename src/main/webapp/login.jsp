@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
 <body>
+    <!-- hidden form field -->
 	<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+    
     <div class="container">
         <div class="loginBox">
             <form action="signin" method="post">
@@ -22,8 +24,8 @@
                 <div class="sec">
                 <div class="rem">
                     <input type="checkbox"><span>Remember me</span>
-                </div> <a href="#">Register</a></div>
-                <h2 id="loginFailed"></h2>
+                </div> <a href="register">Register</a></div>
+                <p id="loginFailed"></p>
             <button type="submit">Login</button>
             </form>
         </div>
@@ -57,10 +59,10 @@
     </div>
     <script type="text/javascript">
     	let status = document.getElementById("status").value;
-    	let test = document.getElementById("loginFailed")
+    	let loginFailed = document.getElementById("loginFailed")
     	if(status === "failed"){
     		//console.log("Login Failed");
-    		test.innerHTML = "Login Failed";
+    		loginFailed.innerHTML = "Login Failed, wrong username or password!";
     	}
     </script>
 </body>

@@ -21,7 +21,6 @@ public ArrayList<Info> getUserInfo() {
 			String sql_command = "select fullname, username, email ,idnumber , region, town, kebele, housenumber from users where email='env@email.com'"; //where email=dsafsfa
 			//String sql_command ="select count(*) from jobList";
 
-
 			Class.forName(Driver);
 			
 			Connection con = DriverManager.getConnection(url,DBuser,DBpass);

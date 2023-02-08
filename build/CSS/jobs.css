@@ -57,7 +57,12 @@ nav.navbar .cssnav li a:hover
 body
 {
     min-height: 100vh;
-    background-color: #D6E4E5;
+    background: url(../images/home12.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-color: #D6E4E5; */
+    backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
     align-items: center;

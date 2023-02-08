@@ -1,6 +1,10 @@
 package main.java.projectpack;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,25 +24,53 @@ public class ServletLogin extends HttpServlet {
 
 	// post request handler
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// credentials from user
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
-		String em = "astu@mail.com", pass="pass123";
+	
+		// String em = "astu@mail.com", pass="pass123";
 		RequestDispatcher dispatcher = null;
-		
-		if(em.equals(email) && pass.equals(password)) {
-			//request.setAttribute("status", "success");
-			dispatcher = request.getRequestDispatcher("jobs");
-		}
-		else {
-			request.setAttribute("status", "failed");
+
+		String DBuser = "root";
+        String DBpass = "password123";
+        String Driver = "com.mysql.cj.jdbc.Driver";
+        String url = "jdbc:MySQL://localhost:3306/test12";
+
+		// db creds
+		String email_db = null;
+		String pass_db = null;
+        
+        try {
+            String sql_command = "select email,password from users where email=\'"+email+"\'";
+            Class.forName(Driver);
+            
+            Connection con = DriverManager.getConnection(url,DBuser,DBpass);
+            
+            Statement statement = con.createStatement();
+
+            ResultSet result = statement.executeQuery(sql_command);
+            
+            while(result.next()) {
+                email_db = result.getString("email");
+                pass_db = result.getString("password");            
+            }
+            if(email_db.equals(email) && pass_db.equals(password)){
+                //request.setAttribute("status", "success");
+				dispatcher = request.getRequestDispatcher("jobs");
+            }
+            else{
+                request.setAttribute("status", "failed");
+				dispatcher = request.getRequestDispatcher("login.jsp");
+            }
+            dispatcher.forward(request, response);
+            
+        }catch (Exception e) {
+            request.setAttribute("status", "failed");
 			dispatcher = request.getRequestDispatcher("login.jsp");
-		}
-		dispatcher.forward(request, response);
-		// TODO1
-		// 1. connect to db and check username and password
-		// if true redirect to home page
-		// else popup login failed error
+            dispatcher.forward(request, response);
+
+            e.printStackTrace();
+        }
 	}
 
 }
