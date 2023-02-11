@@ -27,7 +27,7 @@ body .container
 form
 /* body .container .loginBox */
 {
-    height: 430px;
+    height: 480px;
     width: 550px;
     /* background-color: #1c1c1c; */
     background-color: #EEEEEE;
@@ -54,6 +54,7 @@ body .container .loginBox h1
     position: relative;
     bottom: 10px;
 }
+body .container .loginBox select,
 body .container .loginBox input[type="email"],
 body .container .loginBox input[type="password"]
 {

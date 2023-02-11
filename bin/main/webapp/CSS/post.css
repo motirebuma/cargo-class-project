@@ -5,6 +5,74 @@
     box-sizing:border-box;
     font-family: 'Poppins';
 }
+/* Navbar */
+.navbar
+{
+    display: absolute;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 1px 15px #777;
+    padding: 15px 25px;
+    min-height: 100px;
+    position:fixed;
+    background-color: #1c1c1c;
+}
+.navbar .logo{
+    color: #47B5FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+.navbar .logo i
+{
+    font-size: 30px;
+    color: brown;
+}
+.navbar .logo h1
+{
+    font-size: 25px;
+}
+.navbar span{
+    color: #EB6440;
+}
+/* .navbar p{
+    color: #393E46;
+} */
+.navbar a
+{
+    text-decoration: none;
+    color: #1c1c1c;
+    font-size: 18px;
+    padding: 0 5px;
+    font-weight: 600;
+}
+.navbar a.reg
+{
+    color: #EB6440;
+}
+.navbar a.log
+{
+    color: #47B5FF;
+}
+.navbar a.reg:hover{
+    color: #47B5FF;
+    transition: 0.3s;
+}
+.navbar a.log:hover{
+    color: #EB6440;
+    transition: 0.3s;
+}
+.navbar:hover
+{
+    background-color: #1c1c1c;
+    /* border-bottom: solid 1px #EB6440; */
+    box-shadow: 0 1px 15px #EB6440;
+    transition: 0.5s;
+}
+
 
 body
 {
@@ -12,53 +80,7 @@ body
     display: flex;
     justify-content: center;
     align-items: center;
-}
-nav.navbar
-{
-    min-height: 90px;
-    position: fixed;
-    display: absolute;
-    background-color:#1c1c1c;
-    width: 100%;
-    z-index: 999;
-    border-bottom: solid #47B5FF;
-    top: 0;
-    opacity: 0.8;
-}
-nav.navbar:hover
-{
-    opacity: 1;
-}
-nav.navbar button
-{
-    border: solid 2px teal;
-    border-color: teal;
-    /* margin-left: 20px;   */
-}
-nav.navbar .cssnav
-{
-    justify-content: right;
-    align-items: right;
-}
-nav.navbar .cssnav li{
-    list-style: none;
-    display: inline-block;
-}
-nav.navbar .cssnav li:active
-{
-    transform: scale(1.35);
-}
-nav.navbar .cssnav li a{
-    text-decoration: none;
-    display: block;
-    color: #47B5FF;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: 'Poppins';
-}
-nav.navbar .cssnav li a:hover
-{
-    color: #31E1F7;
+    flex-direction: column;
 }
 .box
 {

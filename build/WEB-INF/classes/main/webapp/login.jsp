@@ -21,6 +21,11 @@
                 <h1>Sign in</h1>
                 <input type="email" placeholder="email" name="email" required>
                 <input type="password" placeholder="password" name="password" required>
+                <select class="catagories" name="userType" id="userType"required>
+                    <option value="">Login us</option>
+                    <option value="Customer">Customer</option>
+                    <option value="Trucker">Trucker</option>
+                </select>
                 <div class="sec">
                 <div class="rem">
                     <input type="checkbox"><span>Remember me</span>

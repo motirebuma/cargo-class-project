@@ -35,7 +35,7 @@ public ArrayList<Info> getUserInfo() {
                 info.setFullname(result.getString("fullname"));
                 info.setUsername(result.getString("username"));
                 info.setEmail(result.getString("email"));
-                info.setId(result.getString("idnumber"));
+                info.setPhone(result.getString("phone"));
                 info.setRegion(result.getString("region"));
                 info.setTown(result.getString("town"));
                 info.setKebele(result.getString("kebele"));

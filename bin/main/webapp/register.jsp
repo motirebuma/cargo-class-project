@@ -21,7 +21,7 @@
             <input type="text" placeholder="username" name="username" required>
             <input type="password" placeholder="password" name="password" required>
             <input type="email" placeholder="Email" name="email" required>
-            <input type="text" placeholder="ID number" name="id" required>
+            <input type="number" placeholder="Phone Number" name="phone" required>
             <select class="catagories" name="region" required>
                 <option value="">Region</option>
                 <option value="Afar">Afar</option>
@@ -38,14 +38,14 @@
             <input type="text" placeholder="Town" name="town" required>
             <input type="text" placeholder="Kebele" name="kebele" required>
             <input type="text" placeholder="house number" name="house" required>
-            <select class="catagories" name="region" id="userType"required>
+            <select class="catagories" name="userType" id="userType"required>
                 <option value="">User Type</option>
                 <option value="Customer">Customer</option>
                 <option value="Trucker">Trucker</option>
             </select>
             <div class="file_div">
-                <label id="id_type">hello1</label>
-                <div id="file">hello2</div>
+                <label id="id_type"></label>
+                <div id="file"></div>
             </div>
             <button type="submit">Register</button>
         </form>
@@ -83,17 +83,28 @@
     <!-- javascript -->
     <script type="text/javascript">
 
-        let usertype = document.getElementById("userType").value;
-        let fileField = document.getElementById("file")
-        let id_type = document.getElementById("id_type")
-        if(usertype == "Customer"){
-            id_type.innerHTML = "Upload your ID";
-            fileField.innerHTML = "<input id='file' type='file' name='id_file' required>";
-        }
-        if(usertype =="Trucker"){
-            id_type.innerHTML = "Upload your License";
-            fileField.innerHTML = "<input id='file' type='file' name='id_file' required>"; 
-        }
+        const selectElement = document.getElementById("userType")
+
+        selectElement.addEventListener('change', (event) => {
+            let usertype = document.getElementById("userType").value;
+            let fileField = document.getElementById("file")
+            let id_type = document.getElementById("id_type")
+
+            if(usertype == "Customer"){
+                id_type.innerHTML = "Upload your ID";
+                fileField.innerHTML = "<input id='file' type='file' name='id_file' required>";
+            }
+
+            if(usertype =="Trucker"){
+                id_type.innerHTML = "Upload your License";
+                fileField.innerHTML = "<input id='file' type='file' name='id_file' required>"; 
+            }
+            if(usertype ==""){
+                id_type.innerHTML = "";
+                fileField.innerHTML = ""; 
+            }
+        });
+
     </script>
 </body>
 </html>

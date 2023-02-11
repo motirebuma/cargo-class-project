@@ -5,7 +5,7 @@ public class Info {
     String fullname;
     String username;
     String email;
-    String id;
+    String phone;
     String region;
     String town;
     String kebele;
@@ -35,12 +35,12 @@ public class Info {
         this.email = email;
     }
 
-    public String getId() {
-        return this.id;
+    public String getPhone() {
+        return this.phone;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getRegion() {

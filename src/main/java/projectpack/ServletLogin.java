@@ -27,6 +27,8 @@ public class ServletLogin extends HttpServlet {
 		// credentials from user
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		String userType = request.getParameter("userType");
+
 	
 		// String em = "astu@mail.com", pass="pass123";
 		RequestDispatcher dispatcher = null;
@@ -37,11 +39,18 @@ public class ServletLogin extends HttpServlet {
         String url = "jdbc:MySQL://localhost:3306/test12";
 
 		// db creds
-		String email_db = null;
+		// String email_db = null;
 		String pass_db = null;
         
         try {
-            String sql_command = "select email,password from users where email=\'"+email+"\'";
+            String sql_command = null;
+            if(userType.equals("Customer")){
+                sql_command = "select password from customers where email=\'"+email+"\'";
+            }
+            if(userType.equals("Trucker")){
+                sql_command = "select password from truckers where email=\'"+email+"\'";
+            }
+
             Class.forName(Driver);
             
             Connection con = DriverManager.getConnection(url,DBuser,DBpass);
@@ -51,12 +60,15 @@ public class ServletLogin extends HttpServlet {
             ResultSet result = statement.executeQuery(sql_command);
             
             while(result.next()) {
-                email_db = result.getString("email");
                 pass_db = result.getString("password");            
             }
-            if(email_db.equals(email) && pass_db.equals(password)){
+            if(pass_db.equals(password) && userType.equals("Customer")){
                 //request.setAttribute("status", "success");
 				dispatcher = request.getRequestDispatcher("jobs");
+            }
+            else if(pass_db.equals(password) && userType.equals("Trucker")){
+                //request.setAttribute("status", "success");
+				dispatcher = request.getRequestDispatcher("post.jsp");
             }
             else{
                 request.setAttribute("status", "failed");

@@ -5,6 +5,17 @@
     box-sizing: border-box;
     font-family: 'Poppins';
 }
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 body
 {
     min-height: 100vh;
@@ -28,7 +39,7 @@ body .container
 
 form
 {
-    height: 700px;
+    min-height: 750px;
     width: 650px;
     background-color: #EEEEEE;
     opacity: 0.9;
@@ -61,6 +72,7 @@ body .container form h1
 body .container form select,
 body .container form input[type="text"],
 body .container form input[type="email"],
+body .container form input[type="number"],
 body .container form input[type="password"]
 {
     height: 35px;
@@ -74,6 +86,7 @@ body .container form input[type="password"]
 
 body .container form input[type="text"]:focus,
 body .container form input[type="email"]:focus,
+body .container form input[type="number"]:focus,
 body .container form input[type="password"]:focus
 {
     border-bottom: solid 3px #03C988;

@@ -23,6 +23,7 @@ public class ServletApply extends HttpServlet {
 		String fullname = request.getParameter("name");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
+		String jobID = request.getParameter("jobID");
 		String message = request.getParameter("message");
 		
 		//Image does not implemented...
@@ -39,36 +40,34 @@ public class ServletApply extends HttpServlet {
         String Driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:MySQL://localhost:3306/test12";
 
-		// try {
-		// 																																	 //1  2  3  4  5  6  7  8  9 
-		// 	String sql_command = "insert into users (fullname, username, password, email, idnumber, region, town, kebele, housenumber) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		try {
+																							   //1  2  3  4  5
+			String sql_command = "insert into applyJob (name, email, phone, jobID, message) values (?, ?, ?, ?, ?)";
 			
-		// 	Class.forName(Driver);
-		// 	Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
+			Class.forName(Driver);
+			Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
 
-		// 	PreparedStatement myStmt = myConn.prepareStatement(sql_command);
+			PreparedStatement myStmt = myConn.prepareStatement(sql_command);
 			
-		// 	myStmt.setString(1, fullname);
-		// 	myStmt.setString(2, username);
-		// 	myStmt.setString(3, password);
-		// 	myStmt.setString(4, email);
-		// 	myStmt.setString(5,  id);
-		// 	myStmt.setString(6, region);
-		// 	myStmt.setString(7, town);
-		// 	myStmt.setString(8,  kebele);
-		// 	myStmt.setString(9, house);
+			myStmt.setString(1, fullname);
+			myStmt.setString(2, email);
+			myStmt.setString(3, phone);
+			myStmt.setString(4,  jobID);
+			myStmt.setString(5, message);
+
 			
-		// 	myStmt.executeUpdate();
+			myStmt.executeUpdate();
 
-		// 	PrintWriter out = response.getWriter();
-		// 	out.println("info saved..");
+			PrintWriter out = response.getWriter();
+			out.println("apply succeded..");
+			myConn.close();
+		}
 
-		// 	myConn.close();
-		// }
-
-		// catch(Exception e){
-		// 	e.printStackTrace();
-		// }
+		catch(Exception e){
+			PrintWriter out = response.getWriter();
+			out.println("you are already applied for this job..");
+			e.printStackTrace();
+		}
 		 
 	}
 

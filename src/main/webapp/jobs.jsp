@@ -12,35 +12,27 @@
     <title>Home</title>
     <!-- css -->
     <link rel="stylesheet" href="CSS/jobs.css">
-    <!-- bootsrap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-expand-md">
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-         
-        <div class="cssnav collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li>
-                    <a href="jobs" class="nav-link">Job List</a>
-                </li>
-                <li class="nav-item">
-                    <a href="postjob" class="nav-link">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Notification</a>
-                </li>
-                <li class="nav-item">
-                    <a href="myaccount" class="nav-link">Account</a>
-                </li>
-            </ul>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-truck-front"></i>
+                <h1 class="logo">Freight-<span>Transportation</span></h1>
+            </div>
+            <div>
+                <a class="log" href="jobs" class="nav-link">Job List</a>
+                <a class="log" href="postjob" class="nav-link">Post</a>
+                <a class="log" href="#" class="nav-link">Notification</a>
+                <a class="log" href="myaccount" class="nav-link">Account</a>
+            </div>
         </div>
-    </nav>
+    </nav>  
 
     <!-- jobType not added -->
     <!-- reverse -->
@@ -58,7 +50,9 @@
             <p><%= job.getPrice()%></p>
             <div class="bp">
                 <h4>Price: <span><%= job.getDescription()%></span> </h4>
-                <button>Apply</button>
+                <a href="apply">
+                    <button>Apply</button>
+                </a>
             </div>
         </div>          
     </div>

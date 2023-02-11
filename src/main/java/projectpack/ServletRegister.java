@@ -24,11 +24,12 @@ public class ServletRegister extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String email = request.getParameter("email");
-		String id = request.getParameter("id");
+		String phone = request.getParameter("phone");
 		String region = request.getParameter("region");
 		String town = request.getParameter("town");
 		String kebele = request.getParameter("kebele");
 		String house = request.getParameter("house");
+		String userType = request.getParameter("userType");
 		//Image does not implemented...
 
 		//JDBC
@@ -38,33 +39,56 @@ public class ServletRegister extends HttpServlet {
         String url = "jdbc:MySQL://localhost:3306/test12";
 
 		try {
-																																			 //1  2  3  4  5  6  7  8  9 
-			String sql_command = "insert into users (fullname, username, password, email, idnumber, region, town, kebele, housenumber) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+																																			 		//1  2  3  4  5  6  7  8  9 
+			String register_customer = "insert into customers (fullname, username, password, email, phone, region, town, kebele, housenumber) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			String register_trucker = "insert into truckers (fullname, username, password, email, phone, region, town, kebele, housenumber) values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			
 			Class.forName(Driver);
 			Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
-
-			PreparedStatement myStmt = myConn.prepareStatement(sql_command);
 			
-			myStmt.setString(1, fullname);
-			myStmt.setString(2, username);
-			myStmt.setString(3, password);
-			myStmt.setString(4, email);
-			myStmt.setString(5,  id);
-			myStmt.setString(6, region);
-			myStmt.setString(7, town);
-			myStmt.setString(8,  kebele);
-			myStmt.setString(9, house);
+			if(userType.equals("Customer")){
+				PreparedStatement myStmt = myConn.prepareStatement(register_customer);
+				myStmt.setString(1, fullname);
+				myStmt.setString(2, username);
+				myStmt.setString(3, password);
+				myStmt.setString(4, email);
+				myStmt.setString(5,  phone);
+				myStmt.setString(6, region);
+				myStmt.setString(7, town);
+				myStmt.setString(8,  kebele);
+				myStmt.setString(9, house);
+				
+				myStmt.executeUpdate();
+			}
+			if(userType.equals("Trucker")){
+				PreparedStatement myStmt = myConn.prepareStatement(register_trucker);
+				myStmt.setString(1, fullname);
+				myStmt.setString(2, username);
+				myStmt.setString(3, password);
+				myStmt.setString(4, email);
+				myStmt.setString(5,  phone);
+				myStmt.setString(6, region);
+				myStmt.setString(7, town);
+				myStmt.setString(8,  kebele);
+				myStmt.setString(9, house);
+				
+				myStmt.executeUpdate();
+			}
 			
-			myStmt.executeUpdate();
+		
 
 			PrintWriter out = response.getWriter();
 			out.println("info saved..");
+			out.println(userType);
+
 
 			myConn.close();
 		}
 
 		catch(Exception e){
+			PrintWriter out = response.getWriter();
+			out.println("already registered");
+			out.println(userType);
 			e.printStackTrace();
 		}
 		 

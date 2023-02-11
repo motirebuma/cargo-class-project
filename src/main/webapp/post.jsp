@@ -14,27 +14,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar navbar-expand-md">
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-         
-        <div class="cssnav collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
-                <li>
-                    <a href="jobs" class="nav-link">Job List</a>
-                </li>
-                <li class="nav-item">
-                    <a href="postjob" class="nav-link">Post</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Notification</a>
-                </li>
-                <li class="nav-item">
-                    <a href="myaccount" class="nav-link">Account</a>
-                </li>
-            </ul>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-truck-front"></i>
+            <h1 class="logo">Freight-<span>Transportation</span></h1>
+        </div>
+        <div>
+            <a class="log" href="jobs" class="nav-link">Job List</a>
+            <a class="log" href="postjob" class="nav-link">Post</a>
+            <a class="log" href="#" class="nav-link">Notification</a>
+            <a class="log" href="myaccount" class="nav-link">Account</a>
+
         </div>
     </nav>
     <div class="box">
