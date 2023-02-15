@@ -18,7 +18,7 @@ public ArrayList<Info> getUserInfo() {
         String url = "jdbc:MySQL://localhost:3306/test12";
         
 		try {
-			String sql_command = "select fullname, username, email ,idnumber , region, town, kebele, housenumber from users where email='env@email.com'"; //where email=dsafsfa
+			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from truckers where email='moti@mail.com'"; //where email=dsafsfa
 			//String sql_command ="select count(*) from jobList";
 
 			Class.forName(Driver);

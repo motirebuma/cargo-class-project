@@ -54,7 +54,7 @@
                 <label for="">Full Name: <%= info.getFullname() %>  </label>
                 <label for="">Username: <%= info.getUsername() %></label>
                 <label for="">Email: <%= info.getEmail() %></label>
-                <label for="">ID number: <%= info.getId() %></label>
+                <label for="">ID number: <%= info.getPhone() %></label>
                 <label for="">Region: <%= info.getRegion() %></label>
                 <label for="">Town: <%= info.getTown() %></label>
                 <label for="">Kebele: <%= info.getKebele() %></label>

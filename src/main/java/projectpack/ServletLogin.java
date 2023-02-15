@@ -1,6 +1,7 @@
 package main.java.projectpack;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -68,7 +69,7 @@ public class ServletLogin extends HttpServlet {
             }
             else if(pass_db.equals(password) && userType.equals("Trucker")){
                 //request.setAttribute("status", "success");
-				dispatcher = request.getRequestDispatcher("post.jsp");
+				dispatcher = request.getRequestDispatcher("jobslist");
             }
             else{
                 request.setAttribute("status", "failed");
@@ -77,9 +78,11 @@ public class ServletLogin extends HttpServlet {
             dispatcher.forward(request, response);
             
         }catch (Exception e) {
-            request.setAttribute("status", "failed");
-			dispatcher = request.getRequestDispatcher("login.jsp");
-            dispatcher.forward(request, response);
+            // request.setAttribute("status", "failed");
+			// dispatcher = request.getRequestDispatcher("login.jsp");
+            // dispatcher.forward(request, response);
+            PrintWriter out = response.getWriter();
+            out.print(e.getMessage());
 
             e.printStackTrace();
         }
