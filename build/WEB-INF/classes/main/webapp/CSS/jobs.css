@@ -6,26 +6,31 @@
     font-family: 'Poppins';
 }
 /* Navbar */
-body nav{
+body .navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 1px 15px #777;
+    padding: 0 25px;
+    min-height: 100px;
+    background-color: #1c1c1c;
     display: absolute;
     position:fixed;
     top: 0;
     left: 0;
     right: 0;
     width: 100%;
-}
-
-body .navbar
-{
-    justify-content: space-between;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 1px 15px #777;
-    padding: 15px 25px;
-    min-height: 100px;
-    background-color: #1c1c1c;
     z-index: 999;
+}
+body .navbar .links
+{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    padding-right: 55px;
 }
 body .navbar .logo{
     color: #47B5FF;
@@ -46,6 +51,9 @@ body .navbar .logo h1
 body .navbar span{
     color: #EB6440;
 }
+/* .navbar p{
+    color: #393E46;
+} */
 body .navbar a
 {
     text-decoration: none;
@@ -77,6 +85,7 @@ body .navbar:hover
     box-shadow: 0 1px 15px #EB6440;
     transition: 0.5s;
 }
+
 /* body */
 body
 {
@@ -86,7 +95,7 @@ body
     background-size: cover;
     background-attachment: fixed;
     /* background-color: #D6E4E5; */
-    backdrop-filter: blur(15px);
+    /* backdrop-filter: blur(15px); */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,10 +109,12 @@ body .post
 {
     min-height: 0;
     width: 850px;
-    background-color: #0081C9;
+    /* background-color: #0081C9; */
+    background-color: #1c1c1c;
     border-radius: 0 50px;
     padding: 10px 20px;
     box-shadow: 0 5px 15px;
+    opacity: 0.8;
     /* overflow: hidden; */
 }
 body .post:hover
@@ -129,7 +140,8 @@ body .post .id
 }
 body .post .id h3
 {
-    background-color: #47B5FF;
+    /* background-color: #47B5FF; */
+    background-color: #fff;
     padding: 10px;
     border-radius: 0 15px ;
 }
@@ -166,7 +178,8 @@ body .post .details button
     width: 100px;
     margin-top: 10px;
     border-radius: 5px;
-    border: 1px solid #5DA7DB;
+    /* border: 1px solid #5DA7DB; */
+    border: 1px solid #fff;
     outline: none;
     box-shadow: 0 3px 10px;
     background-color: transparent;
@@ -177,7 +190,8 @@ body .post .details button:hover
 {
     background-color: #fff;
     box-shadow: 0 3px 10px #3C4048;
-    color: #47B5FF;
+    /* color: #47B5FF; */
+    color: #1c1c1c;
     transition: 0.4s;
     
 }

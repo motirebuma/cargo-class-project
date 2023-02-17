@@ -14,19 +14,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <nav class="navbar">
+    <div class="navbar">
         <div class="logo">
             <i class="fa-solid fa-truck-front"></i>
             <h1 class="logo">Freight-<span>Transportation</span></h1>
         </div>
         <div>
-            <a class="log" href="jobs" class="nav-link">Job List</a>
-            <a class="log" href="postjob" class="nav-link">Post</a>
+            <a class="log" href="jobs" class="nav-link">Jobs</a>
+            <a class="log" href="#" class="nav-link">Post</a>
             <a class="log" href="#" class="nav-link">Notification</a>
             <a class="log" href="myaccount" class="nav-link">Account</a>
-
         </div>
-    </nav>
+    </div>
     <div class="box">
         <h1><span>Post</span>job</h1>
         <form action="postjob" method="post">

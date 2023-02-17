@@ -13,26 +13,26 @@
     <!-- css -->
     <link rel="stylesheet" href="CSS/jobs.css">
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 </head>
 <body>
-    <nav>
+    <div class="nav">
         <div class="navbar">
             <div class="logo">
                 <i class="fa-solid fa-truck-front"></i>
                 <h1 class="logo">Freight-<span>Transportation</span></h1>
             </div>
-            <div>
-                <a class="log" href="jobs" class="nav-link">Job List</a>
+            <div class="links">
+                <a class="log" href="jobs" class="nav-link">Jobs</a>
                 <a class="log" href="postjob" class="nav-link">Post</a>
                 <a class="log" href="#" class="nav-link">Notification</a>
                 <a class="log" href="myaccount" class="nav-link">Account</a>
             </div>
         </div>
-    </nav>  
+    </div>
 
     <!-- jobType not added -->
     <!-- reverse -->
