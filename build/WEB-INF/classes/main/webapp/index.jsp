@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +17,10 @@
             <h1 class="logo">Freight-<span>Transportation</span></h1>
         </div>
         <div>
-            <a class="log" href="jobs" class="nav-link">Jobs</a>
-            <a class="log" href="#" class="nav-link">Post</a>
-            <a class="log" href="#" class="nav-link">Notification</a>
-            <a class="log" href="myaccount" class="nav-link">Account</a>
+            <a class="log" href="signin">Login</a>
+            <a class="log" href="register">Signup</a>
+            <a class="log" href="jobs">jobs</a>
+
         </div>
     </div>
     <section class="home">

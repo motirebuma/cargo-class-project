@@ -1,6 +1,5 @@
 package main.java.projectpack;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,7 +20,7 @@ public class ServletMyAccount extends HttpServlet {
 		// PrintWriter out = response.getWriter();
         // out.print(userEmail);
 		request.setAttribute("infoRec", new userinfoJDBC().getUserInfo());
-		dispatcher = request.getRequestDispatcher("my_account.jsp");
+		dispatcher = request.getRequestDispatcher("customer/my_account.jsp");
 		
 		dispatcher.forward(request, response);
 	}

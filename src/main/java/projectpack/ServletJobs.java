@@ -18,7 +18,7 @@ public class ServletJobs extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setAttribute("jobRec", new jobsJDBC().getjobsResultSet());
-		dispatcher = request.getRequestDispatcher("jobs.jsp");
+		dispatcher = request.getRequestDispatcher("customer/jobs.jsp");
 				
 		dispatcher.forward(request, response);
 	}

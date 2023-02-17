@@ -4,16 +4,14 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import java.sql.Statement;
 
 @WebServlet("/postjob") //
 public class ServletPostJob extends HttpServlet {
@@ -21,7 +19,9 @@ public class ServletPostJob extends HttpServlet {
        
     //get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("post.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("customer/post.jsp");
+		dispatcher.forward(request, response);
+		// response.sendRedirect("customer/post.jsp");
 	}
 
 	//post request handler

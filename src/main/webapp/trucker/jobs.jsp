@@ -1,4 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page  import="java.util.ArrayList"%>
 <%@ page import="main.java.projectpack.Jobs" %>
 <% ArrayList jobsRec = (ArrayList)request.getAttribute("jobRec"); %>
@@ -12,11 +12,7 @@
     <title>Home</title>
     <!-- css -->
     <link rel="stylesheet" href="CSS/jobs.css">
-    <!-- bootstrap -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
 </head>
 <body>
     <div class="nav">
@@ -26,12 +22,12 @@
                 <h1 class="logo">Freight-<span>Transportation</span></h1>
             </div>
             <div class="links">
-                <a class="logo" href="jobslist" class="nav-link">Jobs</a>
-                <a class="logo" href="#" class="nav-link">Notification</a>
-                <a class="logo" href="myaccount" class="nav-link">Account</a>
+                <a class="log" href="jobslist" class="nav-link">Jobs</a>
+                <a class="log" href="#" class="nav-link">Notification</a>
+                <a class="log" href="tr_account" class="nav-link">Account</a>
             </div>
         </div>
-    </div>  
+    </div>
 
     <!-- jobType not added -->
     <!-- reverse -->
