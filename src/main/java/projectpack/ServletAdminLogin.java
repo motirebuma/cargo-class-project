@@ -1,6 +1,7 @@
 package main.java.projectpack;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -34,37 +35,36 @@ public class ServletAdminLogin extends HttpServlet {
         //dispatcher
         RequestDispatcher dispatcher = null;
         String DBuser = "root";
-            String DBpass = "password123";
-            String Driver = "com.mysql.cj.jdbc.Driver";
+        String DBpass = "password123";
+        String Driver = "com.mysql.cj.jdbc.Driver";
+        
+        String url = "jdbc:MySQL://localhost:3306/test12";
+        
+        try {
+            String sql_command = "select password from admin where username=\'" +username+ "\'" ;
+            Class.forName(Driver);
             
-            String url = "jdbc:MySQL://localhost:3306/test12";
-
+            Connection con = DriverManager.getConnection(url,DBuser,DBpass);
             
-            try {
-                String sql_command = "select * from admin";
+            Statement statement = con.createStatement();
 
-                Class.forName(Driver);
-                
-                Connection con = DriverManager.getConnection(url,DBuser,DBpass);
-                
-                Statement statement = con.createStatement();
-    
-                ResultSet result = statement.executeQuery(sql_command);
-                
-                while(result.next()) {
-                    user = result.getString("username");
-                    pass = result.getString("password");                
-                }
-                if(user.equals(username) && pass.equals(password)){
-                    dispatcher = request.getRequestDispatcher("admin_panel.html");
-                }
-                else{
-                    request.setAttribute("status", "failed");
-			        dispatcher = request.getRequestDispatcher("adminLogin.jsp");
-                }
-                dispatcher.forward(request, response);
-                
+            ResultSet result = statement.executeQuery(sql_command);
+            
+            while(result.next()) {
+                pass = result.getString("password");                
+            }
+            if(pass.equals(password)){
+                dispatcher = request.getRequestDispatcher("admin/home.html");
+            }
+            else{
+                request.setAttribute("status", "failed");
+		        dispatcher = request.getRequestDispatcher("adminLogin.jsp");
+            }
+            dispatcher.forward(request, response);
+            
             }catch (Exception e) {
+                PrintWriter out = response.getWriter();
+                out.println(e.getMessage());
                 e.printStackTrace();
             }
 
