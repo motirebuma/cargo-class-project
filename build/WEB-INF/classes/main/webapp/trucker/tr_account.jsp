@@ -27,6 +27,7 @@
             <a class="log" href="#">Account</a>
         </div>
     </div>
+    
     <% for(int i=0; i<infoRec.size(); i++){ %>
         <% Info info = (Info)infoRec.get(i);%>
     <div class="container">
