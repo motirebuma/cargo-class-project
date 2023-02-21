@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/signin")
 public class ServletLogin extends HttpServlet {
@@ -65,6 +66,8 @@ public class ServletLogin extends HttpServlet {
             }
             if(pass_db.equals(password) && userType.equals("Customer")){
                 //request.setAttribute("status", "success");
+                HttpSession session = request.getSession();
+                session.setAttribute("status", "success");
 				dispatcher = request.getRequestDispatcher("jobs");
             }
             else if(pass_db.equals(password) && userType.equals("Trucker")){
