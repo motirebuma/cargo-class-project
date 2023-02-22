@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -16,8 +17,13 @@ public class ServletJobsListForAdmin extends HttpServlet {
 	
 	//get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// get session 
+		HttpSession session = request.getSession();
+		String password = (String)session.getAttribute("password");
+		session.setAttribute("password", password); //assigning for next route[post]
+		
 		request.setAttribute("jobRec", new jobsJDBC().getjobsResultSet());
+
 		dispatcher = request.getRequestDispatcher("admin/jobs.jsp"); //admin
 		dispatcher.forward(request, response);
 	}

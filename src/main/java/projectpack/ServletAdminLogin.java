@@ -13,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/admin_login")
 public class ServletAdminLogin extends HttpServlet {
@@ -29,7 +30,6 @@ public class ServletAdminLogin extends HttpServlet {
 		String password = request.getParameter("pass");
 
         //db
-        String user = "";
         String pass = "";
 
         //dispatcher
@@ -54,6 +54,9 @@ public class ServletAdminLogin extends HttpServlet {
                 pass = result.getString("password");                
             }
             if(pass.equals(password)){
+                // Session
+                HttpSession session = request.getSession();
+                session.setAttribute("password", password);
                 dispatcher = request.getRequestDispatcher("admin/home.html");
             }
             else{

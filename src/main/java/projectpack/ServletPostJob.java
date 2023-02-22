@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/postjob") //
@@ -19,6 +20,11 @@ public class ServletPostJob extends HttpServlet {
        
     //get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// get session 
+		HttpSession session = request.getSession();
+		String password = (String)session.getAttribute("password");
+		session.setAttribute("password", password); //assigning for next route[post]
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("customer/post.jsp");
 		dispatcher.forward(request, response);
 		// response.sendRedirect("customer/post.jsp");
@@ -33,7 +39,6 @@ public class ServletPostJob extends HttpServlet {
 		String description = request.getParameter("description");
 		
 		//variables
-
         String DBuser = "root";
         String DBpass = "password123";
         String Driver = "com.mysql.cj.jdbc.Driver";

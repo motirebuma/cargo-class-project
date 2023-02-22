@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 public class truckersInfoJDBC{
 public ArrayList<Info> getUserInfo() {
 		
@@ -18,8 +20,7 @@ public ArrayList<Info> getUserInfo() {
         String url = "jdbc:MySQL://localhost:3306/test12";
         
 		try {
-			// retrive all users information except password
-			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from customers";
+			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from truckers";
 
 			Class.forName(Driver);
 			

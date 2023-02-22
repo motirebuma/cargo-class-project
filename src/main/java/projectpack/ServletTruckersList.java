@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -18,9 +19,13 @@ public class ServletTruckersList extends HttpServlet {
 	
 	//get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// PrintWriter out = response.getWriter();
-        // out.print(userEmail);
+
         try{
+            // session
+            HttpSession session = request.getSession();
+            String password = (String)session.getAttribute("password");
+            session.setAttribute("password", password);
+            
             request.setAttribute("infoRec", new truckersInfoJDBC().getUserInfo());
             dispatcher = request.getRequestDispatcher("admin/truckers.jsp");
             dispatcher.forward(request, response);

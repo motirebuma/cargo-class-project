@@ -20,6 +20,7 @@
             <a class="log" href="signin">Login</a>
             <a class="log" href="register">Signup</a>
             <a class="log" href="jobs">jobs</a>
+            <a class="log" href="jobslist">jobs2</a>
 
         </div>
     </div>

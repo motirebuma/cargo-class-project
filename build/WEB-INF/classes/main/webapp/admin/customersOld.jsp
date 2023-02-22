@@ -3,12 +3,7 @@
 <%@ page import="main.java.projectpack.Info" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
-<!-- session start -->
-<% String password = (String)session.getAttribute("password"); %>
-<%  if(null==password) {%>
-<%    response.sendRedirect("login.jsp");%>
-<% } %>
-<!-- session done -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,25 +16,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
 <body>
+    <!-- navbar -->
     <div class="navbar">
         <div class="logo">
             <!-- <i class="fa-solid fa-truck-front"></i> -->
-            <h1 class="logo">Freight-<span>Transportation</span></h1>
+            <h1 class="logo">Admin-<span>Panel</span></h1>
         </div>
         <div>
-            <a class="log" href="jobs" class="nav-link">Jobs</a>
-            <a class="log" href="postjob" class="nav-link">Post</a>
-            <a class="log" href="#" class="nav-link">Notification</a>
-            <a class="log" href="#" class="nav-link">Account</a>
+            <a class="log" href="jobslist_admin">PostedJobs</a>
+            <a class="log" href="acceptedjobs_info">AcceptedJobs</a>
+            <a class="log" href="customers_info">Customers</a>
+            <a class="log" href="truckers_info">Truckers</a>
         </div>
     </div>
+    
     <% for(int i=0; i<infoRec.size(); i++){ %>
         <% Info info = (Info)infoRec.get(i);%>
     <div class="container">
         <div class="head">
-            <i class="fa-regular fa-user"></i><h1>My Account</h1>
+            <i class="fa-regular fa-user"></i><h1>User Information</h1>
         </div>
-        <form action="myaccount" method="get">
+        <form action="#" method="get">
             <div class="info">
                 <label for="">Full Name: <%= info.getFullname() %>  </label>
                 <label for="">Username: <%= info.getUsername() %></label>
@@ -49,7 +46,7 @@
                 <label for="">Town: <%= info.getTown() %></label>
                 <label for="">Kebele: <%= info.getKebele() %></label>
                 <label for="">House Number: <%= info.getHauseNumber() %></label>
-                <button type="submit">Edit info</button> <a href="#logout"><button type="button">Logout</button></a>
+                <!-- <button type="submit">Delete User</button> -->
             </div>
         </form>
     </div>

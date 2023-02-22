@@ -1,7 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page  import="java.util.ArrayList"%>
 <%@ page import="main.java.projectpack.Jobs" %>
+<%@ page import="javax.servlet.RequestDispatcher" %>
+
 <% ArrayList jobsRec = (ArrayList)request.getAttribute("jobRec"); %>
+
+<!-- session start -->
+<% String password = (String)session.getAttribute("password"); %>
+<%  if(null==password) {%>
+<%    response.sendRedirect("login.jsp");%>
+<% } %>
+<!-- session done -->
+
 
 <!DOCTYPE html>
 <html lang="en">

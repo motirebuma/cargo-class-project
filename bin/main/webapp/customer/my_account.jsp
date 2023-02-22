@@ -3,7 +3,12 @@
 <%@ page import="main.java.projectpack.Info" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
-
+<!-- session start -->
+<% String password = (String)session.getAttribute("password"); %>
+<%  if(null==password) {%>
+<%    response.sendRedirect("login.jsp");%>
+<% } %>
+<!-- session done -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

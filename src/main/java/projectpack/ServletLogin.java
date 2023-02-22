@@ -67,19 +67,23 @@ public class ServletLogin extends HttpServlet {
             if(pass_db.equals(password) && userType.equals("Customer")){
                 //request.setAttribute("status", "success");
                 HttpSession session = request.getSession();
-                session.setAttribute("status", "success");
+                session.setAttribute("password", password);
+
 				dispatcher = request.getRequestDispatcher("jobs");
             }
             else if(pass_db.equals(password) && userType.equals("Trucker")){
                 //request.setAttribute("status", "success");
+                HttpSession session = request.getSession();
+                session.setAttribute("password", password);
+                
 				dispatcher = request.getRequestDispatcher("jobslist");
             }
             else{
                 request.setAttribute("status", "failed");
 				dispatcher = request.getRequestDispatcher("login.jsp");
             }
-            dispatcher.forward(request, response);
-            
+            dispatcher.include(request, response); 
+            //include session information to next pages response            
         }catch (Exception e) {
             // request.setAttribute("status", "failed");
 			// dispatcher = request.getRequestDispatcher("login.jsp");

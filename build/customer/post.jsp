@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!-- session start -->
+<% String password = (String)session.getAttribute("password"); %>
+<%  if(null==password) {%>
+<%    response.sendRedirect("login.jsp");%>
+<% } %>
+<!-- session done -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

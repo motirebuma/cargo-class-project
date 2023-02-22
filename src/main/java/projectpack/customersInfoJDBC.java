@@ -19,7 +19,7 @@ public ArrayList<Info> getUserInfo() {
         
 		try {
 			// retrive all users information except password
-			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from truckers";
+			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from customers";
 
 			Class.forName(Driver);
 			
