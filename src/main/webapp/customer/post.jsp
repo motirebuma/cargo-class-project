@@ -5,6 +5,7 @@
 <%    response.sendRedirect("login.jsp");%>
 <% } %>
 <!-- session done -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@
         <div>
             <a class="log" href="jobs" class="nav-link">Jobs</a>
             <a class="log" href="#" class="nav-link">Post</a>
-            <a class="log" href="#" class="nav-link">Notification</a>
+            <a class="log" href="notification" class="nav-link">Notification</a>
             <a class="log" href="myaccount" class="nav-link">Account</a>
         </div>
     </div>

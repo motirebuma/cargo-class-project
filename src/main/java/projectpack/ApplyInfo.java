@@ -1,6 +1,6 @@
 package main.java.projectpack;
 
-public class applyInfo {
+public class ApplyInfo {
     String fullname;
     String email;
     String phone;
