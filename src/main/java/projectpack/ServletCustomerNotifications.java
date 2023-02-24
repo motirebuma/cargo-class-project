@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/notification") // trucker side...
-public class ServletApplyInfoList extends HttpServlet {
+public class ServletCustomerNotifications extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestDispatcher dispatcher = null;
 	

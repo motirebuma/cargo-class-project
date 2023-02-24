@@ -17,7 +17,7 @@ public ArrayList<Jobs> getjobsResultSet() {
         String url = "jdbc:MySQL://localhost:3306/test12";
         
 		try {
-			String sql_command = "select id, title, jobType ,truckType , description, price from jobList";
+			String sql_command = "select id, title ,truckType , description, price, jobOwner from jobList";
 			//String sql_command ="select count(*) from jobList";
 
 
@@ -32,12 +32,12 @@ public ArrayList<Jobs> getjobsResultSet() {
 			while(result.next()) {
 				Jobs job = new Jobs();
 				
-				job.setId(result.getInt(1));
-				job.setTitle(result.getString(2));
-				job.setJobType(result.getString(3));
-				job.setTruckType(result.getString(4));
-				job.setPrice(result.getString(5));
-				job.setDescription(result.getString(6));
+				job.setId(result.getInt("id"));
+				job.setTitle(result.getString("title"));
+				job.setTruckType(result.getString("truckType"));
+				job.setPrice(result.getString("price"));
+				job.setDescription(result.getString("description"));
+				job.setJobOwner(result.getString("jobOwner"));
 				
 				jobRecSet.add(job);
 			}

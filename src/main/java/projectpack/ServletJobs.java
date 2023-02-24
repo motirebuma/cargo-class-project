@@ -15,7 +15,7 @@ public class ServletJobs extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestDispatcher dispatcher = null;
 	
-	//get request handler
+	// get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// session
 		HttpSession session = request.getSession();

@@ -3,7 +3,13 @@
 <%@ page import="main.java.projectpack.ApplyInfo" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
-
+<!-- session start -->
+<% String password = (String)session.getAttribute("password"); %>
+<% String email = (String)session.getAttribute("email"); %>
+<%  if(null==password) {%>
+<%    response.sendRedirect("login.jsp");%>
+<% } %>
+<!-- session done -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,31 +38,37 @@
         </div>
     </div>
 
-    <!-- jobType not added -->
+
+    <!-- loop over ApplyInfo -->
     <% for(int i=infoRec.size()-1; i >= 0; i--){ %>
-        <% ApplyInfo apply = (ApplyInfo)infoRec.get(i);%>
-    <div class="post">
-        <div class="id">
-            <h3>JOB ID: <%= apply.getJobID()%></h3>
-        </div>
-        <div class="head">
-            <p><%= apply.getFullname()%></p>
-        </div>
-        <div class="details">
-            <p>Email Address: <%= apply.getEmail()%></p>
-            <p><%= apply.getMessage()%></p>
-            <h4>Phone Number: <span><%= apply.getPhone()%></span> </h4>
-            
-            <div class="bp">
-                <a href="accept">
-                    <button>Accept</button>
-                </a>
-                <a href="decline">
-                    <button>Decline</button>
-                </a>
-            </div>
-        </div>          
-    </div>
+        <form action="decline">
+            <% ApplyInfo apply = (ApplyInfo)infoRec.get(i);%>
+            <% if(email.equals(apply.getJobOwner())) {%>
+                <div class="post">
+                    <div class="id">
+                        <h3>JOB ID: <%= apply.getJobID()%></h3>
+                    </div>
+                    <div class="head">
+                        <p><%= apply.getFullname()%></p>
+                    </div>
+                    <div class="details">
+                        <p>Email Address: <%= apply.getEmail()%></p>
+                        <p><%= apply.getMessage()%></p>
+                        <h4>Phone Number: <span><%= apply.getPhone()%></span> </h4>
+                        
+                        <div class="bp">
+                            <a href="accept">
+                                <button>Accept</button>
+                            </a>
+                            <a>
+                                <input type="hidden" value="<%=apply.getJobID()%>" name="jobID">
+                                <button type="submit">Decline</button>
+                            </a>
+                        </div>
+                    </div>          
+                </div>
+            <%}%>
+        </form>
     <%}%>
 </body>
 </html>

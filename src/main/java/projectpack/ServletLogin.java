@@ -29,7 +29,7 @@ public class ServletLogin extends HttpServlet {
 		// credentials from user
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		String userType = request.getParameter("userType");
+		String userType = request.getParameter("userType"); // login as customer/trucker
 
 	
 		// String em = "astu@mail.com", pass="pass123";
@@ -68,15 +68,16 @@ public class ServletLogin extends HttpServlet {
                 //request.setAttribute("status", "success");
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
+                session.setAttribute("email", email); //
 
-				dispatcher = request.getRequestDispatcher("jobs");
+				dispatcher = request.getRequestDispatcher("jobs"); // for customers
             }
             else if(pass_db.equals(password) && userType.equals("Trucker")){
                 //request.setAttribute("status", "success");
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
                 
-				dispatcher = request.getRequestDispatcher("jobslist");
+				dispatcher = request.getRequestDispatcher("jobslist"); // for trucker
             }
             else{
                 request.setAttribute("status", "failed");

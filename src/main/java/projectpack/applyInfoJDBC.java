@@ -19,7 +19,7 @@ public ArrayList<ApplyInfo> getApplyInfo() {
         
 		try {
 			// retrive all users information except password
-			String sql_command = "select name, email, phone ,jobID , message from applyJob";
+			String sql_command = "select name, email, phone ,jobID , message, jobOwner from applyJob";
 
 			Class.forName(Driver);
 			
@@ -37,7 +37,7 @@ public ArrayList<ApplyInfo> getApplyInfo() {
                 info.setPhone(result.getString("phone"));
                 info.setJobID(result.getString("jobID"));
                 info.setMessage(result.getString("message"));
-
+				info.setJobOwner(result.getString("jobOwner")); //jobOwner's email
 				infoRec.add(info);
 			}
 			

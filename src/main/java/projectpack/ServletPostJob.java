@@ -33,7 +33,7 @@ public class ServletPostJob extends HttpServlet {
 	//post request handler
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String jobTitle = request.getParameter("jobTitle");
-		String jobType = request.getParameter("jobType");
+		String jobOwner = request.getParameter("jobOwner");
 		String price =request.getParameter("price");
 		String truckType = request.getParameter("truckType");
 		String description = request.getParameter("description");
@@ -47,7 +47,7 @@ public class ServletPostJob extends HttpServlet {
 
 		try {
 
-			String sql_command = "insert into jobList (title, jobType, truckType, description, price) values (?, ?, ?, ?, ?)";
+			String sql_command = "insert into jobList (title, truckType, price, description, jobOwner) values (?, ?, ?, ?, ?)";
 			
 			Class.forName(Driver);
 			Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
@@ -55,11 +55,13 @@ public class ServletPostJob extends HttpServlet {
 			PreparedStatement myStmt = myConn.prepareStatement(sql_command);
 			
 			//myStmt.setInt(1, 111);
+			//job-ID <= DEFAULT
 			myStmt.setString(1, jobTitle);
-			myStmt.setString(2, jobType);
-			myStmt.setString(3, truckType);
+			myStmt.setString(2, truckType);
+			myStmt.setString(3,  price);
 			myStmt.setString(4, description);
-			myStmt.setString(5,  price);
+			myStmt.setString(5, jobOwner);
+
 			
 			
 			myStmt.executeUpdate();
@@ -69,10 +71,13 @@ public class ServletPostJob extends HttpServlet {
 
 		catch(Exception e){
 			e.printStackTrace();
+			PrintWriter out = response.getWriter();
+			out.println(e.getMessage()); 
+
+			// out.println("Success fully posted.."); 
 		}
         
-        PrintWriter out = response.getWriter();
-		out.println("Success fully posted.."); 
+        
 		
 	}
 

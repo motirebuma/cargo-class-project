@@ -5,6 +5,7 @@
 <%    response.sendRedirect("login.jsp");%>
 <% } %>
 <!-- session done -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +40,7 @@
             </div> 
             <div class="custom">
                 <i class="fa-solid fa-puzzle-piece"></i>
-                <input type="text" placeholder="job type" name="jobType" required>
+                <input type="email" placeholder="your email" name="jobOwner" required>
             </div>
             <div class="custom">
                 <i class="fa-solid fa-hand-holding-dollar"></i>

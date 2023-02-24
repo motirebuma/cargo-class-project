@@ -25,6 +25,8 @@ public class ServletApply extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String jobID = request.getParameter("jobID");
 		String message = request.getParameter("message");
+		String jobOwner = request.getParameter("jobOwner");
+
 		
 		//Image does not implemented...
 
@@ -41,8 +43,8 @@ public class ServletApply extends HttpServlet {
         String url = "jdbc:MySQL://localhost:3306/test12";
 
 		try {
-																							   //1  2  3  4  5
-			String sql_command = "insert into applyJob (name, email, phone, jobID, message) values (?, ?, ?, ?, ?)";
+																							   				//1  2  3  4  5  6
+			String sql_command = "insert into applyJob (name, email, phone, jobID, message, jobOwner) values (?, ?, ?, ?, ?, ?)";
 			
 			Class.forName(Driver);
 			Connection myConn = DriverManager.getConnection(url,DBuser,DBpass);
@@ -54,6 +56,8 @@ public class ServletApply extends HttpServlet {
 			myStmt.setString(3, phone);
 			myStmt.setString(4,  jobID);
 			myStmt.setString(5, message);
+			myStmt.setString(6, jobOwner);
+
 
 			
 			myStmt.executeUpdate();
@@ -65,7 +69,8 @@ public class ServletApply extends HttpServlet {
 
 		catch(Exception e){
 			PrintWriter out = response.getWriter();
-			out.println("you are already applied for this job..");
+			out.println(e.getMessage());
+			// out.println("you are already applied for this job..");
 			e.printStackTrace();
 		}
 		 

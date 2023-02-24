@@ -6,6 +6,9 @@ public class ApplyInfo {
     String phone;
     String jobID;
     String message;
+    String jobOwner;
+
+  
 
     public String getFullname() {
         return this.fullname;
@@ -46,5 +49,11 @@ public class ApplyInfo {
     public void setMessage(String message) {
         this.message = message;
     }
+    public String getJobOwner() {
+        return this.jobOwner;
+    }
 
+    public void setJobOwner(String jobOwner) {
+        this.jobOwner = jobOwner;
+    }
 }
