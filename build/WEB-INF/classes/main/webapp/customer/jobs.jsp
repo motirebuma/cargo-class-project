@@ -29,10 +29,10 @@
                 <h1 class="logo">Freight-<span>Transportation</span></h1>
             </div>
             <div class="links">
-                <a class="log" href="jobs" class="nav-link">Jobs</a>
-                <a class="log" href="postjob" class="nav-link">Post</a>
-                <a class="log" href="#" class="nav-link">Notification</a>
-                <a class="log" href="myaccount" class="nav-link">Account</a>
+                <a class="log" href="jobs">Jobs</a>
+                <a class="log" href="postjob">Post</a>
+                <a class="log" href="notification">Notification</a>
+                <a class="log" href="myaccount">Account</a>
             </div>
         </div>
     </div>
@@ -50,9 +50,9 @@
         </div>
         <div class="details">
             <h2>Truck type: <%= job.getTruckType()%></h2>
-            <p><%= job.getPrice()%></p>
+            <p><%= job.getDescription()%></p>
             <div class="bp">
-                <h4>Price: <span><%= job.getDescription()%></span> </h4>
+                <h4>Price: <span><%= job.getPrice()%></span> </h4>
                 <a href="apply">
                     <button>Apply</button>
                 </a>

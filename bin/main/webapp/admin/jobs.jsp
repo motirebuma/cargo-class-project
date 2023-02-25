@@ -30,7 +30,7 @@
             </div>
             <div class="links">
                 <a class="log" href="jobslist_admin">PostedJobs</a>
-                <a class="log" href="acceptedjobs_info">AcceptedJobs</a>
+                <a class="log" href="all_message">AcceptedJobs</a>
                 <a class="log" href="customers_info">Customers</a>
                 <a class="log" href="truckers_info">Truckers</a>
             </div>
@@ -49,10 +49,10 @@
             <h1><%= job.getTitle()%></h1>
         </div>
         <div class="details">
-            <h2>Truck type: <%= job.getTruckType()%></h2>
-            <p><%= job.getPrice()%></p>
+            <h2>Truck type: <%= job.getDescription()%></h2>
+            <p><%= job.getTruckType()%></p>
             <div class="bp">
-                <h4>Price: <span><%= job.getDescription()%></span> </h4>
+                <h4>Price: <span><%= job.getPrice()%></span> </h4>
                 <!-- admin can not apply a job... -->
                 <!-- <a href="apply">  
                     <button>Apply</button>

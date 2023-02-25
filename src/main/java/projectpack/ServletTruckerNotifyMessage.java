@@ -24,7 +24,7 @@ public class ServletTruckerNotifyMessage extends HttpServlet {
 		session.setAttribute("password", password);
 		
 		request.setAttribute("infoRec", new acceptedJobInfoJDBC().getAcceptedInfo());
-
+		
 		dispatcher = request.getRequestDispatcher("trucker/notificationMessage.jsp");
 		dispatcher.forward(request, response);
         

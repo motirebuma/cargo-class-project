@@ -28,7 +28,7 @@
         </div>
         <div>
             <a class="log" href="jobslist_admin">PostedJobs</a>
-            <a class="log" href="acceptedjobs_info">AcceptedJobs</a>
+            <a class="log" href="all_message">AcceptedJobs</a>
             <a class="log" href="customers_info">Customers</a>
             <a class="log" href="truckers_info">Truckers</a>
         </div>
@@ -44,35 +44,38 @@
             <p class="title">Kebele</p>
             <p class="title">House Number</p>
         </div>
-
         <% for(int i=0; i<2; i++){ %>
             <% Info info = (Info)infoRec.get(i);%>
-        <div class="fields-container sections">
-            <div class="fields">
-                <p><%= info.getFullname() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getUsername() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getEmail() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getPhone() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getRegion() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getTown() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getKebele() %></p>
-            </div>
-            <div class="fields">
-                <p><%= info.getHauseNumber() %></p>
-            </div>
-        </div>
+                <div class="fields-container sections">
+                    <div class="fields">
+                        <p><%= info.getFullname() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getUsername() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getEmail() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getPhone() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getRegion() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getTown() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getKebele() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getHauseNumber() %></p>
+                    </div>
+                    <form action="delete_customer">
+                        <input type="hidden" value="<%= info.getEmail() %>" name="targetEmail">
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
         <% } %> 
         <!-- section 2 -->  
         <!-- view more -->
@@ -80,32 +83,36 @@
         <div class="view-mores hidden">
             <% for(int i=2; i<infoRec.size(); i++){ %>
                 <% Info info = (Info)infoRec.get(i);%>
-            <div class="fields-container sections">
-                <div class="fields">
-                    <p><%= info.getFullname() %></p>
+                <div class="fields-container sections">
+                    <div class="fields">
+                        <p><%= info.getFullname() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getUsername() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getEmail() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getPhone() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getRegion() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getTown() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getKebele() %></p>
+                    </div>
+                    <div class="fields">
+                        <p><%= info.getHauseNumber() %></p>
+                    </div>
+                    <form action="delete_customer">
+                        <input type="hidden" value="<%= info.getEmail() %>" name="targetEmail">
+                        <button type="submit">Delete Customer</button>
+                    </form>
                 </div>
-                <div class="fields">
-                    <p><%= info.getUsername() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getEmail() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getPhone() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getRegion() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getTown() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getKebele() %></p>
-                </div>
-                <div class="fields">
-                    <p><%= info.getHauseNumber() %></p>
-                </div>
-            </div>
             <% } %> 
         </div>
         <div class="btn">

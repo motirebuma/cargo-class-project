@@ -89,13 +89,14 @@ body
 body .container
 {
     width: 550px;
-    min-height: 500px;
+    height: 450px;
     border: solid 1px grey;
     display: flex;
     flex-direction: column;
     background-color: #fff;
     border-radius: 0 25px 0 25px;
     overflow: hidden;
+    box-shadow: 0 5px 15px;
 
 }
 body .container .head
@@ -128,12 +129,12 @@ body .container .info
 }
 body .container .info button
 {
-    height: 30px;
+    height: 40px;
     width: 120px;
     position: relative;
     left: 350px;
     top: 25px;
-    background-color: #47B5FF;
+    background-color: #1c1c1c;
     color: #fff;
     border: solid 1px #1c1c1c;
     border-radius: 4px;

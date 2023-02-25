@@ -28,7 +28,7 @@
         </div>
         <div>
             <a class="log" href="jobslist_admin">PostedJobs</a>
-            <a class="log" href="acceptedjobs_info">AcceptedJobs</a>
+            <a class="log" href="all_message">AcceptedJobs</a>
             <a class="log" href="customers_info">Customers</a>
             <a class="log" href="truckers_info">Truckers</a>
         </div>
@@ -72,6 +72,10 @@
             <div class="fields">
                 <p><%= info.getHauseNumber() %></p>
             </div>
+            <form action="delete_trucker" method="get">
+                <input type="hidden" value="<%= info.getEmail() %>" name="targetEmail">
+                <button type="submit">Delete</button>
+            </form>
         </div>
         <% } %> 
         <!-- section 2 -->  
@@ -105,6 +109,10 @@
                 <div class="fields">
                     <p><%= info.getHauseNumber() %></p>
                 </div>
+                <form action="delete_trucker" method="get">
+                    <input type="hidden" value="<%= info.getEmail() %>" name="targetEmail">
+                    <button type="submit">Delete</button>
+                </form>
             </div>
             <% } %> 
         </div>

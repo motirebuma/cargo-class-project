@@ -5,6 +5,8 @@
 
 <!-- session start -->
 <% String password = (String)session.getAttribute("password"); %>
+<% String email = (String) session.getAttribute("email"); %>
+
 <%  if(null==password) {%>
 <%    response.sendRedirect("login.jsp");%>
 <% } %>
@@ -27,19 +29,19 @@
             <h1 class="logo">Freight-<span>Transportation</span></h1>
         </div>
         <div>
-            <a class="log" href="jobs" class="nav-link">Jobs</a>
-            <a class="log" href="postjob" class="nav-link">Post</a>
-            <a class="log" href="notification" class="nav-link">Notification</a>
-            <a class="log" href="#" class="nav-link">Account</a>
+            <a class="log" href="jobs">Jobs</a>
+            <a class="log" href="postjob">Post</a>
+            <a class="log" href="notification">Notification</a>
+            <a class="log" href="myaccount">Account</a>
         </div>
     </div>
     <% for(int i=0; i<infoRec.size(); i++){ %>
         <% Info info = (Info)infoRec.get(i);%>
+        <% if(email.equals(info.getEmail())) {%>
     <div class="container">
         <div class="head">
             <i class="fa-regular fa-user"></i><h1>My Account</h1>
         </div>
-        <form action="myaccount" method="get">
             <div class="info">
                 <label for="">Full Name: <%= info.getFullname() %>  </label>
                 <label for="">Username: <%= info.getUsername() %></label>
@@ -49,10 +51,16 @@
                 <label for="">Town: <%= info.getTown() %></label>
                 <label for="">Kebele: <%= info.getKebele() %></label>
                 <label for="">House Number: <%= info.getHauseNumber() %></label>
-                <button type="submit">Edit info</button> <a href="#logout"><button type="button">Logout</button></a>
+
+                <!-- <form action="edit" method="get">
+                    <button type="submit">Edit</button>
+                </form> -->
+                <form action="logout" method="get">
+                    <button type="submit">Logout</button>
+                </form>
             </div>
-        </form>
     </div>
+        <% } %> 
     <% } %> 
 </body>
 </html>

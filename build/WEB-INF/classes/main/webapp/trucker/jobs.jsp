@@ -34,7 +34,7 @@
             <div class="links">
                 <a class="log" href="jobslist">Jobs</a>
                 <a class="log" href="message">Notification</a>
-                <a class="log" href="tr_account">Account</a>
+                <a class="log" href="myaccount">Account</a>
             </div>
         </div>
     </div>
@@ -52,9 +52,9 @@
         </div>
         <div class="details">
             <h2>Truck type: <%= job.getTruckType()%></h2>
-            <p><%= job.getPrice()%></p>
+            <p><%= job.getDescription()%></p>
             <div class="bp">
-                <h4>Price: <span><%= job.getDescription()%></span> </h4>
+                <h4>Price: <span><%= job.getPrice()%></span> </h4>
                 <a href="apply">
                     <button>Apply</button>
                 </a>

@@ -1,7 +1,6 @@
 package main.java.projectpack;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -69,6 +68,8 @@ public class ServletLogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
                 session.setAttribute("email", email); //
+                session.setAttribute("userType", userType);
+
 
 				dispatcher = request.getRequestDispatcher("jobs"); // for customers
             }
@@ -77,8 +78,10 @@ public class ServletLogin extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
                 session.setAttribute("email", email);
+                session.setAttribute("userType", userType);
+
                 
-				dispatcher = request.getRequestDispatcher("jobslist"); // for trucker
+			    dispatcher = request.getRequestDispatcher("jobslist"); // for trucker
             }
             else{
                 request.setAttribute("status", "failed");
@@ -87,13 +90,9 @@ public class ServletLogin extends HttpServlet {
             dispatcher.include(request, response); 
             //include session information to next pages response            
         }catch (Exception e) {
-            // request.setAttribute("status", "failed");
-			// dispatcher = request.getRequestDispatcher("login.jsp");
-            // dispatcher.forward(request, response);
-            PrintWriter out = response.getWriter();
-            out.print(e.getMessage());
-
-            e.printStackTrace();
+            request.setAttribute("status", "failed");
+			dispatcher = request.getRequestDispatcher("login.jsp");
+            dispatcher.forward(request, response);
         }
 	}
 

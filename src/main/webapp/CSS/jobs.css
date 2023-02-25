@@ -89,7 +89,7 @@ body .navbar:hover
 /* body */
 body
 {
-    min-height: 100vh;
+    min-height: 80vh;
     background: url(../images/home12.jpg) no-repeat;
     background-position: center;
     background-size: cover;

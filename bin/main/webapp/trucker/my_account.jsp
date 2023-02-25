@@ -3,7 +3,14 @@
 <%@ page import="main.java.projectpack.Info" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
+<!-- session start -->
+<% String password = (String)session.getAttribute("password"); %>
+<% String email = (String) session.getAttribute("email"); %>
 
+<%  if(null==password) {%>
+<%    response.sendRedirect("login.jsp");%>
+<% } %>
+<!-- session done -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,17 +31,16 @@
         <div>
             <a class="log" href="jobslist">Jobs</a>
             <a class="log" href="message">Notification</a>
-            <a class="log" href="tr_account">Account</a>
+            <a class="log" href="myaccount">Account</a>
         </div>
     </div>
-    
     <% for(int i=0; i<infoRec.size(); i++){ %>
         <% Info info = (Info)infoRec.get(i);%>
+        <% if(email.equals(info.getEmail())) {%>
     <div class="container">
         <div class="head">
             <i class="fa-regular fa-user"></i><h1>My Account</h1>
         </div>
-        <form action="tr_account" method="get">
             <div class="info">
                 <label for="">Full Name: <%= info.getFullname() %>  </label>
                 <label for="">Username: <%= info.getUsername() %></label>
@@ -44,10 +50,16 @@
                 <label for="">Town: <%= info.getTown() %></label>
                 <label for="">Kebele: <%= info.getKebele() %></label>
                 <label for="">House Number: <%= info.getHauseNumber() %></label>
-                <button type="submit">Edit info</button> <a href="#logout"><button type="button">Logout</button></a>
+
+                <!-- <form action="edit" method="get">
+                    <button type="submit">Edit</button>
+                </form> -->
+                <form action="logout" method="get">
+                    <button type="submit">Logout</button>
+                </form>
             </div>
-        </form>
     </div>
+        <% } %> 
     <% } %> 
 </body>
 </html>

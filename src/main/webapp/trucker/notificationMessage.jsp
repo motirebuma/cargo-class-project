@@ -32,7 +32,7 @@
             <div class="links">
                 <a class="log" href="jobslist">Jobs</a>
                 <a class="log" href="message">Notification</a>
-                <a class="log" href="tr_account">Account</a>
+                <a class="log" href="myaccount">Account</a>
             </div>
         </div>
     </div>
@@ -54,7 +54,12 @@
                         <p>Job Owner Email: <%= accepted.getJobOwner()%></p>
                         <p><%= accepted.getMessage()%></p>
                         <h4>Phone Number: <span><%= accepted.getPhone()%></span> </h4>
-                        
+                        <form action="delete_message" method="get">
+                            <a>
+                                <input type="hidden" value="<%= accepted.getJobID()%>" name="jobID">
+                                <button type="submit">Delete</button>
+                            </a>
+                        </form>
                     </div>          
                 </div>
             <%}%>

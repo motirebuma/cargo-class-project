@@ -67,14 +67,16 @@ public class ServletPostJob extends HttpServlet {
 			myStmt.executeUpdate();
 
 			myConn.close();
+
+			//after post is success redirect to jobs page
+			RequestDispatcher dispatcher = request.getRequestDispatcher("jobs");
+			dispatcher.forward(request, response);
 		}
 
 		catch(Exception e){
 			e.printStackTrace();
 			PrintWriter out = response.getWriter();
 			out.println(e.getMessage()); 
-
-			// out.println("Success fully posted.."); 
 		}
         
         
