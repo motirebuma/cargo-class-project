@@ -186,12 +186,35 @@ body .post .details button
     color: #fff;
     font-size: 16px;
 }
+body .post .details button.del
+{
+    height: 35px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+    /* border: 1px solid #5DA7DB; */
+    border: 1px solid #EB6440;
+    outline: none;
+    box-shadow: 0 3px 10px;
+    background-color: transparent;
+    color: #EB6440;
+    font-size: 16px;
+}
 body .post .details button:hover
 {
     background-color: #fff;
     box-shadow: 0 3px 10px #3C4048;
     /* color: #47B5FF; */
     color: #1c1c1c;
+    transition: 0.4s;
+    
+}
+body .post .details button.del:hover
+{
+    background-color: #EB6440;
+    box-shadow: 0 3px 10px #3C4048;
+    /* color: #47B5FF; */
+    color: #fff;
     transition: 0.4s;
     
 }

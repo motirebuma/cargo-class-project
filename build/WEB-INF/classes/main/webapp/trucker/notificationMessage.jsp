@@ -57,7 +57,7 @@
                         <form action="delete_message" method="get">
                             <a>
                                 <input type="hidden" value="<%= accepted.getJobID()%>" name="jobID">
-                                <button type="submit">Delete</button>
+                                <button type="submit" class="del">Delete</button>
                             </a>
                         </form>
                     </div>          

@@ -65,7 +65,7 @@
                             <form action="decline" method="get">
                                 <a>
                                     <input type="hidden" value="<%=apply.getJobID()%>" name="jobID">
-                                    <button type="submit">Decline</button>
+                                    <button type="submit" class="del">Decline</button>
                                 </a>
                             </form>
 
