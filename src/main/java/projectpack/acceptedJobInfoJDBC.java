@@ -5,10 +5,10 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class userinfoJDBC{
-public ArrayList<Info> getUserInfo() {
+public class acceptedJobInfoJDBC{
+public ArrayList<AcceptedInfo> getAcceptedInfo() {
 		
-		ArrayList<Info> infoRec = new ArrayList<Info>();
+		ArrayList<AcceptedInfo> infoRec = new ArrayList<AcceptedInfo>();
 		
 		//variables
         
@@ -18,8 +18,8 @@ public ArrayList<Info> getUserInfo() {
         String url = "jdbc:MySQL://localhost:3306/test12";
         
 		try {
-			String sql_command = "select fullname, username, email ,phone , region, town, kebele, housenumber from truckers"; //where email=dsafsfa
-			//String sql_command ="select count(*) from jobList";
+			// retrive all users information except password
+			String sql_command = "select name, email, phone ,jobID , message, jobOwner from acceptedJobs";
 
 			Class.forName(Driver);
 			
@@ -30,17 +30,14 @@ public ArrayList<Info> getUserInfo() {
 			ResultSet result = statement.executeQuery(sql_command);
 			
 			while(result.next()) {
-				Info info = new Info();
+				AcceptedInfo info = new AcceptedInfo();
 				
-                info.setFullname(result.getString("fullname"));
-                info.setUsername(result.getString("username"));
+                info.setFullname(result.getString("name"));
                 info.setEmail(result.getString("email"));
                 info.setPhone(result.getString("phone"));
-                info.setRegion(result.getString("region"));
-                info.setTown(result.getString("town"));
-                info.setKebele(result.getString("kebele"));
-                info.setHauseNumber(result.getString("housenumber"));
-				
+                info.setJobID(result.getString("jobID"));
+                info.setMessage(result.getString("message"));
+				info.setJobOwner(result.getString("jobOwner")); //jobOwner's email
 				infoRec.add(info);
 			}
 			

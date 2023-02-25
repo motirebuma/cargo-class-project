@@ -41,7 +41,6 @@
 
     <!-- loop over ApplyInfo -->
     <% for(int i=infoRec.size()-1; i >= 0; i--){ %>
-        <form action="decline">
             <% ApplyInfo apply = (ApplyInfo)infoRec.get(i);%>
             <% if(email.equals(apply.getJobOwner())) {%>
                 <div class="post">
@@ -57,18 +56,23 @@
                         <h4>Phone Number: <span><%= apply.getPhone()%></span> </h4>
                         
                         <div class="bp">
-                            <a href="accept">
-                                <button>Accept</button>
-                            </a>
-                            <a>
-                                <input type="hidden" value="<%=apply.getJobID()%>" name="jobID">
-                                <button type="submit">Decline</button>
-                            </a>
+                            <!-- simple form -->
+                            <form action="accept" method="get">
+                                <a>
+                                    <button type="submit">Accept</button>
+                                </a>
+                            </form>
+                            <form action="decline" method="post">
+                                <a>
+                                    <input type="hidden" value="<%=apply.getJobID()%>" name="jobID">
+                                    <button type="submit">Decline</button>
+                                </a>
+                            </form>
+
                         </div>
                     </div>          
                 </div>
             <%}%>
-        </form>
     <%}%>
 </body>
 </html>

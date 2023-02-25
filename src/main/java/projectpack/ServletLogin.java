@@ -76,6 +76,7 @@ public class ServletLogin extends HttpServlet {
                 //request.setAttribute("status", "success");
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
+                session.setAttribute("email", email);
                 
 				dispatcher = request.getRequestDispatcher("jobslist"); // for trucker
             }

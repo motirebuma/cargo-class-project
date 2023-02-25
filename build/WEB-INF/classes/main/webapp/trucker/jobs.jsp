@@ -32,9 +32,9 @@
                 <h1 class="logo">Freight-<span>Transportation</span></h1>
             </div>
             <div class="links">
-                <a class="log" href="jobslist" class="nav-link">Jobs</a>
-                <a class="log" href="#" class="nav-link">Notification</a>
-                <a class="log" href="tr_account" class="nav-link">Account</a>
+                <a class="log" href="jobslist">Jobs</a>
+                <a class="log" href="message">Notification</a>
+                <a class="log" href="tr_account">Account</a>
             </div>
         </div>
     </div>
