@@ -27,6 +27,7 @@
             <h1 class="logo">Admin-<span>Panel</span></h1>
         </div>
         <div>
+            <a class="log" href="admin_home">Home</a>
             <a class="log" href="jobslist_admin">PostedJobs</a>
             <a class="log" href="all_message">AcceptedJobs</a>
             <a class="log" href="customers_info">Customers</a>

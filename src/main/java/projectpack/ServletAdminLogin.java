@@ -54,10 +54,10 @@ public class ServletAdminLogin extends HttpServlet {
                 pass = result.getString("password");                
             }
             if(pass.equals(password)){
-                // Session
+                //Session
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
-                dispatcher = request.getRequestDispatcher("admin/home.html");
+                dispatcher = request.getRequestDispatcher("admin/home.jsp");
             }
             else{
                 request.setAttribute("status", "failed");
