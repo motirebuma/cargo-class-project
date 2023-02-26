@@ -1,6 +1,7 @@
 <!-- import -->
 <%@page  import="java.util.ArrayList"%>
 <%@ page import="main.java.projectpack.Jobs" %>
+
 <% ArrayList jobsRec = (ArrayList)request.getAttribute("jobRec"); %>
 
 <!-- session start -->
@@ -54,9 +55,13 @@
             <div class="bp">
                 <h4>Price: <span><%= job.getPrice()%></span> </h4>
                 <!-- admin can not apply a job... -->
-                <!-- <a href="apply">  
-                    <button>Apply</button>
-                </a> -->
+                
+                <form action="delete_jobs" method="get">
+                    <a>  
+                        <input type="hidden" value="<%= job.getId() %>" name="jobID">
+                        <button class="del">Delete</button>
+                    </a>
+                </form>
             </div>
         </div>          
     </div>

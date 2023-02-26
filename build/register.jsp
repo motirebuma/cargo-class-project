@@ -91,12 +91,12 @@
 
             if(usertype == "Customer"){
                 id_type.innerHTML = "Upload your ID";
-                fileField.innerHTML = "<input id='file' type='file' name='id_file' accept='.jpg, .png, .jpeg' required>";
+                fileField.innerHTML = "<input id='file' type='file' enctype='multipart/form-data' name='id_file' accept='.jpg, .png, .jpeg' required>";
             }
 
             if(usertype =="Trucker"){
                 id_type.innerHTML = "Upload your License";
-                fileField.innerHTML = "<input id='file' type='file' name='id_file' accept='.jpg, .png, .jpeg' required>"; 
+                fileField.innerHTML = "<input id='file' type='file' enctype='multipart/mixed' name='id_file' accept='.jpg, .png, .jpeg' required>"; 
             }
             if(usertype ==""){
                 id_type.innerHTML = "";

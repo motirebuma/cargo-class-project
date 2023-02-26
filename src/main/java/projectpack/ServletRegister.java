@@ -1,17 +1,23 @@
 package main.java.projectpack;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 @WebServlet("/register")
+@MultipartConfig
 public class ServletRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
@@ -30,7 +36,31 @@ public class ServletRegister extends HttpServlet {
 		String kebele = request.getParameter("kebele");
 		String house = request.getParameter("house");
 		String userType = request.getParameter("userType");
-		//Image does not implemented...
+
+		// // get file and save to verification folder
+		// InputStream inputStream = null;
+		// OutputStream outputStream = null;
+		// try {
+		// 	Part filePart = request.getPart("id_file"); // "image" is the name of the input file field in the form
+		// 	inputStream = filePart.getInputStream();
+		// 	outputStream = new FileOutputStream("verification/image.jpg"); // Replace "path/to/save" with the actual path on your system
+		// 	int read = 0;
+		// 	final byte[] bytes = new byte[1024];
+		// 	while ((read = inputStream.read(bytes)) != -1) {
+		// 		outputStream.write(bytes, 0, read);
+		// 	}
+		// } catch (Exception e) {
+		// 	e.printStackTrace();
+		// 	PrintWriter out = response.getWriter();
+		// 	out.println(e.getMessage());
+		// } finally {
+		// 	if (inputStream != null) {
+		// 		inputStream.close();
+		// 	}
+		// 	if (outputStream != null) {
+		// 		outputStream.close();
+		// 	}
+		// }
 
 		//JDBC
         String DBuser = "root";
@@ -76,10 +106,10 @@ public class ServletRegister extends HttpServlet {
 			}
 			
 		
-
-			PrintWriter out = response.getWriter();
-			out.println("info saved..");
-			out.println(userType);
+			// jquery
+			// PrintWriter out = response.getWriter();
+			// out.println("info saved..");
+			// out.println(userType);
 
 
 			myConn.close();
