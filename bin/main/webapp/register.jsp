@@ -1,4 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,10 +41,8 @@
                 <option value="Customer">Customer</option>
                 <option value="Trucker">Trucker</option>
             </select>
-            <div class="file_div">
-                <label id="id_type"></label>
-                <div id="file"></div>
-            </div>
+            <!-- registration failed -->
+            <p id="regFailed"></p>
             <button type="submit">Register</button>
         </form>
     </div>
@@ -80,30 +77,17 @@
     </div>
 
     <!-- javascript -->
+    <input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+    
     <script type="text/javascript">
-
-        const selectElement = document.getElementById("userType")
-
-        selectElement.addEventListener('change', (event) => {
-            let usertype = document.getElementById("userType").value;
-            let fileField = document.getElementById("file")
-            let id_type = document.getElementById("id_type")
-
-            if(usertype == "Customer"){
-                id_type.innerHTML = "Upload your ID";
-                fileField.innerHTML = "<input id='file' type='file' enctype='multipart/form-data' name='id_file' accept='.jpg, .png, .jpeg' required>";
-            }
-
-            if(usertype =="Trucker"){
-                id_type.innerHTML = "Upload your License";
-                fileField.innerHTML = "<input id='file' type='file' enctype='multipart/mixed' name='id_file' accept='.jpg, .png, .jpeg' required>"; 
-            }
-            if(usertype ==""){
-                id_type.innerHTML = "";
-                fileField.innerHTML = ""; 
-            }
-        });
-
+    	let status = document.getElementById("status").value;
+    	let regFailed = document.getElementById("regFailed")
+    	if(status === "failed"){
+    		regFailed.innerHTML = "Registration Failed, Email already exist!";
+    	}
+        if(status === "success"){
+    		regFailed.innerHTML = "Account created successfully";
+        }
     </script>
 </body>
 </html>

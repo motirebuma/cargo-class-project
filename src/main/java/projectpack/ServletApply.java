@@ -5,19 +5,36 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/apply")
 public class ServletApply extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("apply.html");
+		HttpSession session = request.getSession();
+        String userType = (String) session.getAttribute("userType");
+		RequestDispatcher dispatcher = null;
+
+		if(userType.equals("Customer")){
+			dispatcher = request.getRequestDispatcher("customer/apply.html");
+			
+		}
+		else if(userType.equals("Trucker")){
+			dispatcher = request.getRequestDispatcher("trucker/apply.html");
+		}
+		else{
+			dispatcher = request.getRequestDispatcher("login.jsp");
+		}
+		dispatcher.forward(request, response);
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String fullname = request.getParameter("name");
@@ -27,14 +44,11 @@ public class ServletApply extends HttpServlet {
 		String message = request.getParameter("message");
 		String jobOwner = request.getParameter("jobOwner");
 
-		
-		//Image does not implemented...
+		// get session
+		HttpSession session = request.getSession();
+        String userType = (String) session.getAttribute("userType");
+		RequestDispatcher dispatcher = null;
 
-        // PrintWriter out = response.getWriter();
-        // out.println(fullname);
-        // out.println(email);
-        // out.println(phone);
-        // out.println(message);
 
 		//JDBC
         String DBuser = "root";
@@ -62,9 +76,20 @@ public class ServletApply extends HttpServlet {
 			
 			myStmt.executeUpdate();
 
-			PrintWriter out = response.getWriter();
-			out.println("apply succeded..");
-			myConn.close();
+			// PrintWriter out = response.getWriter();
+			// out.println("apply succeded..");
+			// myConn.close();
+			if(userType.equals("Customer")){
+				dispatcher = request.getRequestDispatcher("jobs");
+				
+			}
+			else if(userType.equals("Trucker")){
+				dispatcher = request.getRequestDispatcher("jobslist");
+			}
+			else{
+				dispatcher = request.getRequestDispatcher("login.jsp");
+			}
+			dispatcher.forward(request, response);
 		}
 
 		catch(Exception e){

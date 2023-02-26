@@ -14,13 +14,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/signin")
+// path ==> /signin
+@WebServlet("/signin") 
 public class ServletLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	// get request handler
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("login.jsp"); //forward to login.jsp
 	}
 
 	// post request handler
@@ -39,19 +40,19 @@ public class ServletLogin extends HttpServlet {
         String Driver = "com.mysql.cj.jdbc.Driver";
         String url = "jdbc:MySQL://localhost:3306/test12";
 
-		// db creds
-		// String email_db = null;
-		String pass_db = null;
+		
         
         try {
             String sql_command = null;
+
             if(userType.equals("Customer")){
-                sql_command = "select password from customers where email=\'"+email+"\'";
+                sql_command = "select password from customers where email=\'"+email+"\'";  // "select password from customers where email='sofi@mail.com'"
             }
             if(userType.equals("Trucker")){
-                sql_command = "select password from truckers where email=\'"+email+"\'";
+                sql_command = "select password from truckers where email=\'"+email+"\'"; // "select password from truckers where email='email'"
             }
 
+            // JDBC
             Class.forName(Driver);
             
             Connection con = DriverManager.getConnection(url,DBuser,DBpass);
@@ -60,14 +61,18 @@ public class ServletLogin extends HttpServlet {
 
             ResultSet result = statement.executeQuery(sql_command);
             
+            // db cred
+		    String pass_db = null;
+
             while(result.next()) {
                 pass_db = result.getString("password");            
             }
+
             if(pass_db.equals(password) && userType.equals("Customer")){
                 //request.setAttribute("status", "success");
                 HttpSession session = request.getSession();
-                session.setAttribute("password", password);
-                session.setAttribute("email", email); //
+                session.setAttribute("password", password); // variable and value
+                session.setAttribute("email", email);
                 session.setAttribute("userType", userType);
 
 

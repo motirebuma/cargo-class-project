@@ -16,19 +16,19 @@
             <div>
                 <a class="log" href="jobslist">Jobs</a>
                 <a class="log" href="message">Notification</a>
-                <a class="log" href="tr_account">Account</a>
+                <a class="log" href="myaccount">Account</a>
             </div>
         </div>
         <div class="container">
-            <h1>Apply</h1>
             <form action="apply" method="post">
+                <h1>Apply <span>Job</span> </h1>
                 <input type="text" placeholder="full name" name="name" required>
                 <input type="email" placeholder="email" name="email" required>
                 <input type="number" placeholder="phone" name="phone" required>
                 <input type="number" placeholder="job id" name="jobID" required>
+                <input type="email" placeholder="job Owner" name="jobOwner" required>
                 <textarea placeholder="your message..." name="message" required></textarea>
                 <div class="ftr">
-                    <p>Phone: 213213123</p>
                     <button type="submit">Apply</button>
                 </div>
             </form>

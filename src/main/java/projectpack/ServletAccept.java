@@ -55,25 +55,18 @@ public class ServletAccept extends HttpServlet {
 
 			
 			myStmt.executeUpdate();
-
-			PrintWriter out = response.getWriter();
-			out.println("apply succeded..");
-            out.println(fullname);
-			out.println(email);
-			out.println(phone);
-			out.println(jobID);
-			out.println(message);
-			out.println(jobOwner);
 			myConn.close();
-			
 
+			RequestDispatcher dispatcher = request.getRequestDispatcher("notification");
+			dispatcher.forward(request, response);
 
 		}
 
 		catch(Exception e){
 			PrintWriter out = response.getWriter();
-			out.println(e.getMessage());
-			// out.println("you are already applied for this job..");
+			// out.println(e.getMessage());
+			out.println("you are already applied for this job..");
+			out.println("Post Failed");
 			e.printStackTrace();
 		}
 		 

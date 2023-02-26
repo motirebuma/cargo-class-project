@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/jobslist_admin") // trucker side...
-public class ServletJobsListForAdmin extends HttpServlet {
+public class ServletAdminJobsList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestDispatcher dispatcher = null;
 	

@@ -90,43 +90,69 @@ body
     justify-content: center;
     align-items: center;
 }
-body .container
-{
-    height: 300px;
-    width: 450px;
-    border: 1px solid black;
-    padding: 20px;
-
-}
 body .container h1
 {
     text-align: center;
+    color: #EB6440;
 }
 body form{
-    
+    min-height: 300px;
+    width: 550px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 2px 5px 8px;
+    border-radius: 10px;
 }
 
 body form input
 {
-    width: 220px;
+    width: 90%;
+    height: 40px;
     outline: none;
+    padding: 2px 10px;
+    border: none;
+    box-shadow: 0 2px 7px;
 }
 
 body form textarea
 {
     resize: none;
     height: 80px;
-    width: 220px;
+    width: 90%;
     outline: none;
+    box-shadow: 0 2px 7px;
+    padding: 2px 10px;
 }
 body form .ftr
 {
     display: flex;
+    position: relative;
     justify-content: space-between;
-    width: 100%;
+    right: 35%;
+}
+span
+{
+    color: #47B5FF;
+}
+button
+{
+    height: 35px;
+    width: 100px;
+    box-shadow: 0 2px 7px;
+    border: none;
+    color: #EB6440;
+}
+button:active
+{
+    transform: scale(1.07);
+    transition: 0.2s;
+}
+button:hover
+{
+    background-color: #47B5FF;
+    color: #1c1c1c;
 }

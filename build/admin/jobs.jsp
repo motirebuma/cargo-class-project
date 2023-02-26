@@ -35,6 +35,7 @@
                 <a class="log" href="all_message">AcceptedJobs</a>
                 <a class="log" href="customers_info">Customers</a>
                 <a class="log" href="truckers_info">Truckers</a>
+                <a class="log" href="logout">Logout</a>
             </div>
         </div>
     </div>

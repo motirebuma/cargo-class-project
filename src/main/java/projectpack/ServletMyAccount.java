@@ -33,7 +33,7 @@ public class ServletMyAccount extends HttpServlet {
 			}
 			else{
 				//if userType is null, user does not logged in so we should redirect user to login page..
-				dispatcher = request.getRequestDispatcher("login.jsp"); 
+				dispatcher = request.getRequestDispatcher("login.jsp");
 			}
 			
 			dispatcher.forward(request, response);

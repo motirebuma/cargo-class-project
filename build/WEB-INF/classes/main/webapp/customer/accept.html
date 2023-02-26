@@ -10,24 +10,24 @@
     <body>
         <div class="navbar">
             <div class="logo">
-                <!-- <i class="fa-solid fa-truck-front"></i> -->
                 <h1 class="logo">Freight-<span>Transportation</span></h1>
             </div>
             <div>
-                <a class="log" href="jobs" class="nav-link">Jobs</a>
-                <a class="log" href="#" class="nav-link">Post</a>
-                <a class="log" href="#" class="nav-link">Notification</a>
-                <a class="log" href="myaccount" class="nav-link">Account</a>
+                <a class="log" href="jobs">Jobs</a>
+                <a class="log" href="postjob">Post</a>
+                <a class="log" href="notification">Notification</a>
+                <a class="log" href="myaccount">Account</a>
+                
             </div>
         </div>
         <div class="container">
-            <h1>Accept</h1>
             <form action="accept" method="post">
-                <input type="text" placeholder="full name" name="name" required>
-                <input type="email" placeholder="email" name="email" required>
-                <input type="number" placeholder="phone" name="phone" required>
+                <h1><span>Accept </span>Job</h1>
+                <input type="text" placeholder="name" name="name" required>
+                <input type="email" placeholder="job applier email" name="email" required>
+                <input type="number" placeholder="your phone" name="phone" required>
                 <input type="number" placeholder="job id" name="jobID" required>
-                <input type="email" placeholder="job Owner" name="jobOwner" required>
+                <input type="email" placeholder="your email" name="jobOwner" required>
                 <textarea placeholder="your message..." name="message" required></textarea>
                 <div class="ftr">
                     <button type="submit">Accept</button>

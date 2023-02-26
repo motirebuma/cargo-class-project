@@ -10,18 +10,21 @@
     <!-- cdn for login, phone,mail and location icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
 </head>
-<body>
-    <!-- hidden form field -->
-	<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
-    
+<body>   
     <div class="container">
         <div class="loginBox">
+            <!-- form field -->
+            <!-- action=signin -->
+            <!-- method=post -->
             <form action="signin" method="post">
                 <i class="fas fa-user"></i>
                 <h1>Sign in</h1>
-                <input type="email" placeholder="email" name="email" required>
-                <input type="password" placeholder="password" name="password" required>
-                <select class="catagories" name="userType" id="userType"required>
+                <!-- email -->
+                <input type="email" placeholder="email" name="email" required>  <!-- name="email" -->
+                <!-- password -->
+                <input type="password" placeholder="password" name="password" required> <!-- name="password" -->
+                <!-- user type -->
+                <select class="catagories" name="userType" id="userType"required> <!-- name="userType" -->
                     <option value="">Login us</option>
                     <option value="Customer">Customer</option>
                     <option value="Trucker">Trucker</option>
@@ -30,6 +33,7 @@
                 <div class="rem">
                     <input type="checkbox"><span>Remember me</span>
                 </div> <a href="register">Register</a></div>
+                <!-- login failed -->
                 <p id="loginFailed"></p>
             <button type="submit">Login</button>
             </form>
@@ -62,6 +66,12 @@
 
         </div>
     </div>
+
+    <!-- java script login status checker -->
+    <!-- hidden form field -->
+    <!-- status -->
+	<input type="hidden" id="status" value="<%= request.getAttribute("status")%>">
+    
     <script type="text/javascript">
     	let status = document.getElementById("status").value;
     	let loginFailed = document.getElementById("loginFailed")

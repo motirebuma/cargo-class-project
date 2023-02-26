@@ -44,7 +44,7 @@ public class ServletDeleteTrucker extends HttpServlet {
 
             con.close();
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("customers_info"); 
+            RequestDispatcher dispatcher = request.getRequestDispatcher("truckers_info"); 
             dispatcher.forward(request, response);
 
             
@@ -54,11 +54,6 @@ public class ServletDeleteTrucker extends HttpServlet {
             e.printStackTrace();
         }
 
-	}
-
-	// post request handler
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 }

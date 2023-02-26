@@ -37,29 +37,27 @@
     </div>
     <% for(int i=0; i<infoRec.size(); i++){ %>
         <% Info info = (Info)infoRec.get(i);%>
+        <!-- filter account by email and session email -->
         <% if(email.equals(info.getEmail())) {%>
-    <div class="container">
-        <div class="head">
-            <i class="fa-regular fa-user"></i><h1>My Account</h1>
-        </div>
-            <div class="info">
-                <label for="">Full Name: <%= info.getFullname() %>  </label>
-                <label for="">Username: <%= info.getUsername() %></label>
-                <label for="">Email: <%= info.getEmail() %></label>
-                <label for="">ID number: <%= info.getPhone() %></label>
-                <label for="">Region: <%= info.getRegion() %></label>
-                <label for="">Town: <%= info.getTown() %></label>
-                <label for="">Kebele: <%= info.getKebele() %></label>
-                <label for="">House Number: <%= info.getHauseNumber() %></label>
-
-                <!-- <form action="edit" method="get">
-                    <button type="submit">Edit</button>
-                </form> -->
-                <form action="logout" method="get">
-                    <button type="submit">Logout</button>
-                </form>
+        <div class="container">
+            <div class="head">
+                <i class="fa-regular fa-user"></i><h1>My Account</h1>
             </div>
-    </div>
+                <div class="info">
+                    <label for="">Full Name: <%= info.getFullname() %>  </label>
+                    <label for="">Username: <%= info.getUsername() %></label>
+                    <label for="">Email: <%= info.getEmail() %></label>
+                    <label for="">ID number: <%= info.getPhone() %></label>
+                    <label for="">Region: <%= info.getRegion() %></label>
+                    <label for="">Town: <%= info.getTown() %></label>
+                    <label for="">Kebele: <%= info.getKebele() %></label>
+                    <label for="">House Number: <%= info.getHauseNumber() %></label>
+                    
+                    <form action="logout" method="get">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+        </div>
         <% } %> 
     <% } %> 
 </body>

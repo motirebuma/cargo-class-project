@@ -57,6 +57,7 @@ public class ServletAdminLogin extends HttpServlet {
                 //Session
                 HttpSession session = request.getSession();
                 session.setAttribute("password", password);
+                
                 dispatcher = request.getRequestDispatcher("admin/home.jsp");
             }
             else{
