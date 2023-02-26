@@ -44,10 +44,6 @@ public class ServletDecline extends HttpServlet {
 
             con.close();
 
-            // Output the result
-            // PrintWriter out = response.getWriter();
-            // out.println("Rows affected: " + rowsAffected);// Output the result
-            // out.println("command: " + sql_command);
             RequestDispatcher dispatcher = request.getRequestDispatcher("notification");
             dispatcher.forward(request, response);
 

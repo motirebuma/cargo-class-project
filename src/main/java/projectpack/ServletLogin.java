@@ -92,8 +92,8 @@ public class ServletLogin extends HttpServlet {
                 request.setAttribute("status", "failed");
 				dispatcher = request.getRequestDispatcher("login.jsp");
             }
-            dispatcher.include(request, response); 
-            //include session information to next pages response            
+            dispatcher.forward(request, response); 
+
         }catch (Exception e) {
             request.setAttribute("status", "failed");
 			dispatcher = request.getRequestDispatcher("login.jsp");

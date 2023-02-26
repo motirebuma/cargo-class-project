@@ -17,7 +17,6 @@
     <!-- nav bar -->
     <div class="navbar">
         <div class="logo">
-            <!-- <i class="fa-solid fa-truck-front"></i> -->
             <h1 class="logo">Admin-<span>Panel</span></h1>
         </div>
         <div>
