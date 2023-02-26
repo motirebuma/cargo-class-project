@@ -1,6 +1,6 @@
 <!-- import -->
 <%@page  import="java.util.ArrayList"%>
-<%@ page import="main.java.projectpack.Jobs" %>
+<%@ page import="main.java.projectpack.model.Jobs" %>
 
 <!-- jobs Record -->
 <% ArrayList jobsRec = (ArrayList)request.getAttribute("jobRec"); %>

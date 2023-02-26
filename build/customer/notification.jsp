@@ -1,6 +1,6 @@
 <!-- import -->
 <%@page  import="java.util.ArrayList"%>
-<%@ page import="main.java.projectpack.ApplyInfo" %>
+<%@ page import="main.java.projectpack.model.ApplyInfo" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
 <!-- session start -->

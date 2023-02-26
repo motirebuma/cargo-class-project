@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page  import="java.util.ArrayList"%>
-<%@ page import="main.java.projectpack.Info" %>
+<%@ page import="main.java.projectpack.model.Info" %>
 <% ArrayList infoRec = (ArrayList)request.getAttribute("infoRec"); %>
 
 <!-- session start -->
