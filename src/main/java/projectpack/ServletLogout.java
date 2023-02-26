@@ -19,6 +19,7 @@ public class ServletLogout extends HttpServlet {
                 session.setAttribute("password", null);
                 session.setAttribute("email", null);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp"); //change sendRedirect to dispatcher
+                dispatcher.forward(request, response);
 	}
 
 }
