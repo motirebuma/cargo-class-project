@@ -5,5 +5,5 @@ build/
 build.xml
 build.properties
 *build*
-/bin
+bin
 
