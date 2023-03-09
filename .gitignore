@@ -2,8 +2,6 @@
 vscode
 *.vscode
 build/
-build.xml
-build.properties
 *build*
 bin
 
